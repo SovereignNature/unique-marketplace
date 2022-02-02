@@ -136,6 +136,7 @@ const SearchForm = (props: SearchFormProps) => {
           loading={offersLoading}
           searchString={searchString}
           setSearchString={setSearchString}
+          placeholder='Search by token name/attributes'
         />
       </Form.Field>
       <Form.Field className='sort-field'>
@@ -146,11 +147,9 @@ const SearchForm = (props: SearchFormProps) => {
         />
       </Form.Field>
       <Form.Field className='search-results'>
-        { !!(offersCount && offersCount > 0) && (
-          <span>
-            {offersCount} items
-          </span>
-        )}
+        <span>
+          {offersCount} {`${offersCount === 1 ? 'item' : 'items'}`}
+        </span>
         { areFiltersActive && <a onClick={clearFilters}>Clear all filters</a> }
       </Form.Field>
     </Form>

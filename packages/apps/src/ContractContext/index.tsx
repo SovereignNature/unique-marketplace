@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import BN from 'bn.js';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState, useRef } from 'react';
 import Web3 from 'web3';
 import { Contract } from 'web3-eth-contract';
 
@@ -64,6 +64,7 @@ function Contracts ({ account, children }: Props): React.ReactElement<Props> | n
   const [deposited, setDeposited] = useState<BN>();
   const [web3Instance, setWeb3Instance] = useState<Web3>();
   const [ethAccount, setEthAccount] = useState<string>();
+  const abiRef = useRef<Contract>();
 
   const getUserDeposit = useCallback(async (): Promise<BN | null> => {
     try {
@@ -89,8 +90,6 @@ function Contracts ({ account, children }: Props): React.ReactElement<Props> | n
     }
   }, [ethAccount, matcherContractInstance, setDeposited]);
 
-  console.log('userDeposit', deposited);
-
   const value = useMemo(() => ({
     account,
     deposited,
@@ -111,9 +110,18 @@ function Contracts ({ account, children }: Props): React.ReactElement<Props> | n
   }, [account]);
 
   const initAbi = useCallback(() => {
-    if (account && ethAccount) {
+    if (account && ethAccount && !abiRef.current) {
       console.log('mySubEthAddress', evmToAddress(ethAccount, 42, 'blake2'));
-
+      /* options
+      {
+        reconnect: {
+          auto: true,
+          delay: 5000,
+          maxAttempts: 5,
+          onTimeout: false
+        }
+      }
+       */
       const provider = new Web3.providers.HttpProvider(uniqueSubstrateApiRpc);
       // const web3 = new Web3(window.ethereum);
       const web3 = new Web3(provider);
@@ -130,7 +138,7 @@ function Contracts ({ account, children }: Props): React.ReactElement<Props> | n
 
         setMatcherContractInstance(newContractInstance);
 
-        console.log('newContractInstance', newContractInstance);
+        abiRef.current = newContractInstance;
       } catch (e) {
         // User has denied account access to DApp...
       }

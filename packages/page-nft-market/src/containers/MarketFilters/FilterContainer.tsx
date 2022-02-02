@@ -5,20 +5,17 @@ import './styles.scss';
 
 import type { NftCollectionInterface } from '@polkadot/react-hooks/useCollection';
 
-import BN from 'bn.js';
 import React, { useCallback, useEffect, useState } from 'react';
 import Loader from 'semantic-ui-react/dist/commonjs/elements/Loader';
 
 import { Filters } from '@polkadot/app-nft-market/containers/NftMarket';
 import envConfig from '@polkadot/apps-config/envConfig';
-import { useMetadata } from '@polkadot/react-hooks';
+import { fromStringToBnString } from '@polkadot/react-hooks/utils';
 
 import { SESSION_STORAGE_KEYS } from './constants';
 import FilterContainerItem from './FilterContainerItem';
 
-const { commission, uniqueCollectionIds } = envConfig;
-
-// type FiltersCallBackType = (prevFilters: Filters) => Filters;
+const { kusamaDecimals, uniqueCollectionIds } = envConfig;
 
 interface PropTypes {
   account: string|undefined;
@@ -45,10 +42,9 @@ const setInStorage = (storageKey: string, data: Filters | boolean | PricesTypes)
 };
 
 const defaultPrices: PricesTypes = { maxPrice: '', minPrice: '' };
+const maxFilterValue = 100000;
 
 const FilterContainer: React.FC<PropTypes> = ({ account, allowClearFilters, collections, filters, loadingCollections, setAllowClearFilters, setAreFiltersActive, setFilters }) => {
-  const { getTokenImageUrl } = useMetadata();
-  const [images, setImages] = useState<string[]>([]);
   const [KSMPrices, setKSMPrices] = useState<PricesTypes>(defaultPrices);
   const [isShowCollection, setIsShowCollection] = useState<boolean>(true);
   const [isShowPrice, setIsShowPrice] = useState<boolean>(true);
@@ -58,20 +54,17 @@ const FilterContainer: React.FC<PropTypes> = ({ account, allowClearFilters, coll
   const changePrices = useCallback((minPrice: string | undefined, maxPrice: string | undefined) => {
     const filtersCopy = { ...filters };
 
-    if (minPrice === '') {
+    if (!minPrice?.length) {
       delete filtersCopy.minPrice;
     } else {
-      const currentMinPrice = new BN(Number(minPrice) * 10000000000);
-
-      filtersCopy.minPrice = String(currentMinPrice.mul(new BN(10)).div(new BN(1000 + commission * 10))) + '0000';
+      filtersCopy.minPrice = fromStringToBnString(minPrice, kusamaDecimals);
     }
 
-    if (maxPrice === '') {
+    if (!maxPrice?.length) {
       delete filtersCopy.maxPrice;
     } else {
-      const currentMaxPrice = new BN(Number(maxPrice) * 10000000000);
+      filtersCopy.maxPrice = fromStringToBnString(maxPrice, kusamaDecimals);
 
-      filtersCopy.maxPrice = String(currentMaxPrice.mul(new BN(10)).div(new BN(1000 + commission * 10))) + '0000';
     }
 
     setFilters(filtersCopy);
@@ -92,7 +85,7 @@ const FilterContainer: React.FC<PropTypes> = ({ account, allowClearFilters, coll
 
     val = val.slice(0, 8);
 
-    if (+val > 100000 || +val < 0) {
+    if (+val > maxFilterValue || +val < 0) {
       return;
     }
 
@@ -161,17 +154,6 @@ const FilterContainer: React.FC<PropTypes> = ({ account, allowClearFilters, coll
     setInStorage(SESSION_STORAGE_KEYS.ARE_ALL_COLLECTIONS_CHECKED, false);
   }, [filters, setFilters]);
 
-  const updateImageUrl = useCallback(() => {
-    collections.forEach((element) => {
-      void getTokenImageUrl(element, '1')
-        .then((res) => {
-          if (res) {
-            setImages((prev) => [...prev, res]);
-          } else setImages((prev) => ['', ...prev]);
-        });
-    });
-  }, [collections, getTokenImageUrl]);
-
   const onSetCurrentFilter = useCallback(() => {
     setIsShowCollection(!isShowCollection);
   }, [isShowCollection, setIsShowCollection]);
@@ -183,13 +165,6 @@ const FilterContainer: React.FC<PropTypes> = ({ account, allowClearFilters, coll
   const onKeyDown = useCallback((evt: React.KeyboardEvent) => {
     ['e', 'E', '+', '-'].includes(evt.key) && evt.preventDefault();
   }, []);
-
-  /* const onKeyPress = useCallback((evt: KeyPressEvent) => {
-    if (evt.charCode === 13) {
-
-    }
-    evt.charCode === 13 ? changePrices(KSMPrices.minPrice, KSMPrices.maxPrice) : null;
-  }, [changePrices, KSMPrices]); */
 
   const onSetShowPrices = useCallback(() => {
     setIsShowPrice(!isShowPrice);
@@ -206,10 +181,6 @@ const FilterContainer: React.FC<PropTypes> = ({ account, allowClearFilters, coll
   useEffect(() => {
     updateSeller();
   }, [account, updateSeller]);
-
-  useEffect(() => {
-    void updateImageUrl();
-  }, [updateImageUrl]);
 
   useEffect(() => {
     const storagePrices = getFromStorage(SESSION_STORAGE_KEYS.PRICES) as PricesTypes;
@@ -280,15 +251,12 @@ const FilterContainer: React.FC<PropTypes> = ({ account, allowClearFilters, coll
                   inline='centered'
                 />
               )}
-              {collections.map((collection, index) => {
+              {collections.map((collection) => {
                 return (
                   <FilterContainerItem
                     collection={collection}
-                    collections={collections}
                     collectionsChecked={collectionsChecked}
                     filterCurrent={filterCurrent}
-                    images={images}
-                    index={index}
                     key={collection.id}
                     onCheckBoxMockFunc={onCheckBoxMockFunc}
                   />

@@ -1,7 +1,7 @@
 // Copyright 2017-2021 @polkadot/apps, UseTech authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-// import '@unique-nft/types/augment-api-rpc';
+import '@unique-nft/types/augment-api-rpc';
 
 import BN from 'bn.js';
 import { useCallback } from 'react';
@@ -11,9 +11,6 @@ import { useApi } from '@polkadot/react-hooks/useApi';
 import { useDecoder } from '@polkadot/react-hooks/useDecoder';
 
 export type SchemaVersionTypes = 'ImageURL' | 'Unique';
-// hash schema - offchain.unique.network/images/{collectionId}/token/{tokenId}
-// image hash - where to store?
-// ConstData or VariableData of token? For validation.
 
 export interface NftCollectionInterface {
   access?: 'Normal' | 'WhiteList'
@@ -114,10 +111,10 @@ export function useCollection () {
     return {};
   }, [api]);
 
-  const getCollectionOnChainSchema = useCallback((collectionInfo: NftCollectionInterface): { constSchema: ProtobufAttributeType | undefined, variableSchema: ProtobufAttributeType | undefined } => {
+  const getCollectionOnChainSchema = useCallback((collectionInfo: NftCollectionInterface): { constSchema: ProtobufAttributeType | undefined, variableSchema: { collectionCover: string } | undefined } => {
     const result: {
       constSchema: ProtobufAttributeType | undefined,
-      variableSchema: ProtobufAttributeType | undefined,
+      variableSchema: { collectionCover: string } | undefined
     } = {
       constSchema: undefined,
       variableSchema: undefined
@@ -132,7 +129,7 @@ export function useCollection () {
       }
 
       if (varSchema && varSchema.length) {
-        result.variableSchema = JSON.parse(varSchema) as ProtobufAttributeType;
+        result.variableSchema = JSON.parse(varSchema) as { collectionCover: string } | undefined;
       }
 
       return result;
