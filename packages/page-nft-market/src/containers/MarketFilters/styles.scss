@@ -115,11 +115,13 @@
   cursor: pointer;
   color: var(--error-color);
   display: inline-block;
-  &:hover{
+
+  &:hover {
     text-decoration: underline;
   }
-  &:active{
-    color:  var(--error-color-dark);
+
+  &:active {
+    color: var(--error-color-dark);
   }
 
 }
@@ -148,9 +150,11 @@
     opacity: 1;
   }
 }
+
 .rotate-icon {
   transform: rotateX(180deg);
 }
+
 .collection-list {
   max-height: 390px;
   max-width: 300px;
@@ -212,10 +216,12 @@
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
+
 .disable-token {
   background-color: #ffffff !important;
   border: 2px solid #c7cbd4;
   cursor: default;
+
   &:before {
     border: 2px solid #c7cbd4;
     width: 16px !important;
@@ -238,12 +244,12 @@
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #1db0ff;
   border: 1px solid #1db0ff;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   left: -1px;
   -webkit-transform: translateX(17px);
   -ms-transform: translateX(17px);
@@ -279,7 +285,7 @@ input:checked + .slider:before {
     font-size: 14px;
     line-height: 22px;
 
-    &:hover{
+    &:hover {
       border: 1px solid var(--input-border-color-hover);
     }
 
@@ -290,6 +296,7 @@ input:checked + .slider:before {
 
   }
 }
+
 .price-btn {
   display: flex;
   flex-direction: row;
@@ -309,17 +316,18 @@ input:checked + .slider:before {
   width: 89px;
   height: 32px;
 }
+
 .price-btn-active {
   background-color: var(--white-color);
   color: var(--button-color);
   border: 1px solid var(--button-color);
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: var(--button-background-hover);
   }
 
-  &:active{
+  &:active {
     color: var(--button-background-active);
     background-color: var(--white-color);
   }
@@ -328,10 +336,8 @@ input:checked + .slider:before {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-}
-
-.filter-treats {
 }
