@@ -148,6 +148,27 @@ a {
     justify-content: space-between;
     align-items: center;
     max-width: var(--max-header-width);
+    color: #AAE6B9;
+  }
+
+
+
+
+  .my-tokens {
+
+    .ui.header {
+      color: #AAE6B9;
+    }
+
+    .hkvxWq {
+      max-width: 100%;
+      width: 100%;
+      padding: var(--gap);
+      background-color: transparent;
+      color: #f4f4f4;
+    }
+
+
   }
 
   .go-back a {
@@ -158,7 +179,6 @@ a {
   .toke-details .token-info {
     margin-top: 40px;
     padding: 24px;
-    /* background-color: var(--card-background); */
     box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
     background-color: rgba(0, 0, 0, 0.486);
     backdrop-filter: blur(10px);

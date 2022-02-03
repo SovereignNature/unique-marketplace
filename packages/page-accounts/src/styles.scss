@@ -1,5 +1,16 @@
 .accounts--App {
 
+  .hkvxWq {
+    max-width: 100%;
+    width: 100%;
+    padding: var(--gap);
+    color: #f4f4f4;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+    background-color: rgba(0, 0, 0, 0.486);
+    backdrop-filter: blur(10px);
+    border-radius: 4px;
+  }
+
 
   .page-accounts--card .accounts-table--header {
     background: #231F20;
