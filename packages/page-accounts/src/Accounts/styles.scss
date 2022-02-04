@@ -1,16 +1,24 @@
+.ui.menu .active.item {
+  color: rgba(0, 0, 0, 0.95);
+  font-weight: 400;
+  box-shadow: none;
+  background: #AAE6B9;
+}
+
 .page-accounts {
   .ui {
-    &.buttons {
-
-      &.account-actions {
-        float: right;
-        display: flex;
-        grid-column-gap: var(--gap);
-        margin-top: var(--gap);
-        margin-bottom: var(--gap);
-      }
+    &.account-actions {
+      //float: right;
+      display: flex;
+      
+      grid-column-gap: var(--gap);
+      margin-top: var(--gap);
+      margin-bottom: var(--gap);
     }
+
+
   }
+
 
   td.button {
     float: right;
