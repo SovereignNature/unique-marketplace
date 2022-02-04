@@ -91,7 +91,7 @@ function Apps({ className = '' }: Props): React.ReactElement<Props> {
 
       <Parallax strength={400}>
         <Background className="custom-bg">
-          <img src="https://lh3.googleusercontent.com/Zbg9B1U1QG3TzDzwQs4Y7YWW47kJEczibf7Tr8S2XvUmbFhOlsaGipVepBGVwBkkG1L6yuOBArF9LxGiX328WE02FQrRooRa7jPk-oSLNJ-PCPn-j0iznhIY46miO3EPclKAsSCF8A=w2400" />
+          <img src="./images/bgmain.png" />
         </Background>
 
 
