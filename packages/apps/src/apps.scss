@@ -39,6 +39,10 @@ a {
       letter-spacing: 2px;
       border-radius: var(--bradius) !important;
 
+      // &.hover {
+  //   color: #057453;
+  // }
+
       &.active {
         background-color: #AAE6B9;
         color: #231F20;
@@ -440,7 +444,8 @@ a {
     border-radius: 2px;
 
     &:hover {
-      color: var(--white-color);
+      background-color: #AAE6B9;
+      color: #231F20;
     }
 
   }
