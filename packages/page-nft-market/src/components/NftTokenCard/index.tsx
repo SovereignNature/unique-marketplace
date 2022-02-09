@@ -64,7 +64,7 @@ const NftTokenCard = ({ account, collectionId, openDetailedInformationModal, tok
             <Image
               src={tokenUrl}
               ui={false}
-              size='medium'
+              size='small'
               centered
             />
           )}
