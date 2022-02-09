@@ -109,12 +109,16 @@
     .page-accounts {
       overflow: auto;
       padding-top: calc((var(--gap) / 2) * 3);
+      margin-top: 63px;
 
       .ui.buttons.account-actions {
-        flex-direction: column;
-        float: left;
-        padding: 0 var(--gap);
-        grid-row-gap: calc(var(--gap) / 2);
+        flex-direction: row;
+
+
+        display: flex;
+        grid-column-gap: var(--gap);
+        margin-top: var(--gap);
+        margin-bottom: var(--gap);
       }
     }
   }

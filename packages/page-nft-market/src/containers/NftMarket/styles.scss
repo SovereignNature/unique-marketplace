@@ -479,6 +479,18 @@
 
 @media (max-width: 1024px) {
 
+  .menu-mobile,
+  .manage-balances.mobile,
+  .manage-accounts {
+    margin-top: 145px;
+  }
+
+  .app-main .app-container {
+    padding: 0;
+    margin-top: 63px;
+  }
+
+
   .nft-market--panel {
     box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
     background-color: rgba(0, 0, 0, 0.486);
