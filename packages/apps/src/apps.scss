@@ -7,9 +7,9 @@
   flex-direction: column;
   min-height: 100vh;
   background-image: url("./images/bgmain.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-position: inherit;
+  background-size: contain;
+  background-repeat: round;
 }
 
 
@@ -40,8 +40,8 @@ a {
       border-radius: var(--bradius) !important;
 
       // &.hover {
-  //   color: #057453;
-  // }
+      //   color: #057453;
+      // }
 
       &.active {
         background-color: #AAE6B9;
