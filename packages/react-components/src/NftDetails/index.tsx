@@ -157,29 +157,24 @@ function NftDetails({ account }: NftDetailsProps): React.ReactElement<NftDetails
           </div>
           <div className='token-info--row--attributes'>
 
-            {/* {collectionInfo && <span>{hex2a(collectionInfo.TokenPrefix)}</span>} #{tokenId} */}
+            
 
             {attributes && Object.values(attributes).length > 0 && (
               <Header as='h3'>
                 {Object.keys(attributes).map((attrKey) => {
                   if (!Array.isArray(attributes[attrKey])) {
-                    return <p key={attrKey}>{attrKey}: {attributes[attrKey]}</p>;
+                    return <p as='h3' key={attrKey}>{attributes[attrKey]}</p>;
                   }
 
                   return (
-                    <p key={attrKey}>{attrKey}: {(attributes[attrKey] as string[]).join(', ')}</p>
+                    <p as='h3' key={attrKey}>{(attributes[attrKey] as string[])}</p>
                   );
                 })}
               </Header>
             )}
-
-
             <div className='accessories'>
-              ID: DCVL#{tokenId}
+              {collectionInfo && <span>{hex2a(collectionInfo.TokenPrefix)}</span>} #{tokenId}
             </div>
-
-
-
             {(tokenAsk && tokenAsk.price) && (
               <>
                 <Header as={'h2'}>
