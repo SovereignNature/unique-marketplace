@@ -206,7 +206,7 @@ function NftDetails({ account }: NftDetailsProps): React.ReactElement<NftDetails
             {(!uOwnIt && tokenInfo && tokenInfo.Owner && tokenInfo.Owner.toString() === escrowAddress && tokenAsk?.owner) && (
               <Header as='h5'>The owner is {tokenAsk?.owner.toString()}</Header>
             )}
-            {/* <div className='buttons'>
+            <div className='buttons'>
               {(uOwnIt && !uSellIt) && (
                 <Button
                   content='Transfer'
@@ -261,7 +261,7 @@ function NftDetails({ account }: NftDetailsProps): React.ReactElement<NftDetails
                   />
                 )}
               </>
-            </div> */}
+            </div>
 
             {(showTransferForm && collectionInfo) && (
               <TransferModal
