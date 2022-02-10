@@ -156,9 +156,6 @@ function NftDetails({ account }: NftDetailsProps): React.ReactElement<NftDetails
             )}
           </div>
           <div className='token-info--row--attributes'>
-
-
-
             {attributes && Object.values(attributes).length > 0 && (
               <Header as='h3'>
                 {Object.keys(attributes).map((attrKey) => {

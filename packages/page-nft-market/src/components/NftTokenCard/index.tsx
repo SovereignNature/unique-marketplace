@@ -72,7 +72,19 @@ const NftTokenCard = ({ account, collectionId, openDetailedInformationModal, tok
             <Card.Content>
               <Card.Description>
                 <div className='card-name'>
-                  <div className='card-name__title'>Title</div>
+                  {attributes && Object.values(attributes).length > 0 && (
+                    <div>
+                    {Object.keys(attributes).map((attrKey) => {
+                      if (!Array.isArray(attributes[attrKey])) {
+                        return <div className='card-name__title' key={attrKey}>{attributes[attrKey]}</div>;
+                      }
+
+                      return (
+                        <div className='card-name__title' key={attrKey}>{(attributes[attrKey] as string[]).join(' ')}</div>
+                      );
+                    })}
+                    </div>
+                  )}
                   <div className='card-name__field'>{hex2a(collectionInfo.TokenPrefix)} {`#${token.tokenId}`} {tokenName?.value}</div>
                   <div className='card-name__field'>{collectionName16Decoder(collectionInfo.Name)}</div>
                 </div>
