@@ -206,14 +206,14 @@ function NftDetails({ account }: NftDetailsProps): React.ReactElement<NftDetails
             {(!uOwnIt && tokenInfo && tokenInfo.Owner && tokenInfo.Owner.toString() === escrowAddress && tokenAsk?.owner) && (
               <Header as='h5'>The owner is {tokenAsk?.owner.toString()}</Header>
             )}
-            {/* <div className='buttons'>
+            <div className='buttons'>
               {(uOwnIt && !uSellIt) && (
                 <Button
                   content='Transfer'
                   onClick={toggleTransferForm}
                 />
               )}
-              {(!account && tokenAsk) && (
+              {/* {(!account && tokenAsk) && (
 
                 <div>
                   <Button
@@ -224,9 +224,9 @@ function NftDetails({ account }: NftDetailsProps): React.ReactElement<NftDetails
                   <p className='text-with-button'>Сonnect your wallet to make transactions</p>
 
                 </div>
-              )}
+              )} */}
               <>
-                {(!uOwnIt && !transferStep && tokenAsk && kusamaFees) && (
+                {/* {(!uOwnIt && !transferStep && tokenAsk && kusamaFees) && (
                   <>
                     <div className='warning-block'>A small Kusama Network transaction fee up to {formatKsmBalance(kusamaFees.muln(2))} KSM will be
                       applied to the transaction</div>
@@ -236,14 +236,14 @@ function NftDetails({ account }: NftDetailsProps): React.ReactElement<NftDetails
                       onClick={onBuy}
                     />
                   </>
-                )}
+                )} */}
 
-                {(uOwnIt && !uSellIt) && (
+                {/* {(uOwnIt && !uSellIt) && (
                   <Button
                     content='Sell'
                     onClick={onSell}
                   />
-                )}
+                )} */}
                 {(uSellIt && !transferStep) && (
                   <Button
                     content={
@@ -261,7 +261,7 @@ function NftDetails({ account }: NftDetailsProps): React.ReactElement<NftDetails
                   />
                 )}
               </>
-            </div> */}
+            </div>
 
             {(showTransferForm && collectionInfo) && (
               <TransferModal
