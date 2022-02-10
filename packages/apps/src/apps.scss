@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url("./images/bgmain.png");
+  background-image: url("./images/bgalt.jpeg");
   background-position: inherit;
   background-size: contain;
   background-repeat: round;
@@ -38,11 +38,13 @@ a {
       font: 400 16px/24px var(--font-roboto);
       color: #AAE6B9;
       letter-spacing: 2px;
-      border-radius: var(--bradius) !important;
+      margin: 0 12px;
+      border-radius: 8px !important;
+      transition: 0.4s;
 
-      // &.hover {
-      //   color: #5A7D7C;
-      // }
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
 
       &.active {
         background-color: #AAE6B9;
@@ -50,6 +52,10 @@ a {
         margin-top: 0;
         font-weight: 500;
         height: 50px;
+        border-radius: 8px !important;
+        &:hover {
+          background-color: #8bf5a5;
+        }
       }
 
       &.app-logo {
@@ -69,6 +75,10 @@ a {
           font-size: 12px;
           bottom: -30px;
           left: 6px;
+        }
+
+        &:hover {
+          background: transparent;
         }
 
         .logo-img {

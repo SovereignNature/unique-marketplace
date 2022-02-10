@@ -215,6 +215,10 @@
   border: 1px solid #322222;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+
+  &:hover {
+    border: 1px solid #aae6b9;
+  }
 }
 
 .disable-token {
