@@ -114,6 +114,7 @@ function Apps({ className = '' }: Props): React.ReactElement<Props> {
                       icon={
                         <img
                           alt={`logo SNI`}
+                          className="logo-img"
                           src={String(sniLogo)} />
                       }
                       to='/'
@@ -122,7 +123,7 @@ function Apps({ className = '' }: Props): React.ReactElement<Props> {
                   <Menu.Item
                     active={location.pathname === '/market'}
                     as={NavLink}
-                    name='market'
+                    name='Bio-compendium'
                     to='/market'
                   />
                   <Menu.Item

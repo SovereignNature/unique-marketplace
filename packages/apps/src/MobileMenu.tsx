@@ -43,7 +43,7 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
         strict={true}
         to={'/market'}
       >
-        Market
+        Bio-compendium
       </NavLink>
       <NavLink
         className={`menu-mobile--link ${location.pathname === '/wallet' ? 'active' : ''}`}

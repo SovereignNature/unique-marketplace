@@ -57,10 +57,24 @@ a {
         width: auto;
         margin-right: calc((var(--gap) / 2) * 3);
 
-        img {
+        &::after {
+          content: "beta";
+          color: white;
+          text-transform: uppercase;
+          border: 1px solid white;
+          border-radius: 5px;
+          padding: 0px 5px;
+          position: relative;
+          bottom: 0px;
+          font-size: 12px;
+        }
+
+        .logo-img {
           width: auto;
           max-width: 130px;
           height: 90px;
+
+
         }
       }
     }
@@ -170,9 +184,6 @@ a {
 
   }
 
-  .go-back a {
-    color: #AAE6B9 !important;
-  }
 
 
   .toke-details .token-info {
