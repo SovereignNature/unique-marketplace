@@ -32,7 +32,7 @@ interface Props {
 }
 
 const NftTokenCard = ({ account, collectionId, openDetailedInformationModal, token }: Props): React.ReactElement<Props> => {
-  const { collectionInfo, tokenName, tokenUrl } = useSchema(account, collectionId, token.tokenId);
+  const { attributes, collectionInfo, tokenName, tokenUrl } = useSchema(account, collectionId, token.tokenId);
   const { collectionName16Decoder, hex2a } = useDecoder();
 
   const getFee = useCallback((price: BN): BN => {
@@ -51,7 +51,7 @@ const NftTokenCard = ({ account, collectionId, openDetailedInformationModal, tok
     <Tilt
       className="parallax-effect"
       perspective={500}
-      glareEnable={true} glareMaxOpacity={0.6} glareColor="#057453" glarePosition="all" glareBorderRadius="1px"
+      glareEnable={true} glareMaxOpacity={0.6} glareColor="#5A7D7C" glarePosition="all" glareBorderRadius="1px"
     >
       <div className="inner-element">
         <Card
@@ -72,7 +72,8 @@ const NftTokenCard = ({ account, collectionId, openDetailedInformationModal, tok
             <Card.Content>
               <Card.Description>
                 <div className='card-name'>
-                  <div className='card-name__title'>{hex2a(collectionInfo.TokenPrefix)} {`#${token.tokenId}`} {tokenName?.value}</div>
+                  <div className='card-name__title'>{attributes}</div>
+                  <div className='card-name__field'>{hex2a(collectionInfo.TokenPrefix)} {`#${token.tokenId}`} {tokenName?.value}</div>
                   <div className='card-name__field'>{collectionName16Decoder(collectionInfo.Name)}</div>
                 </div>
                 {token.price && (

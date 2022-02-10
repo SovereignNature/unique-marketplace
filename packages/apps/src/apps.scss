@@ -41,7 +41,7 @@ a {
       border-radius: var(--bradius) !important;
 
       // &.hover {
-      //   color: #057453;
+      //   color: #5A7D7C;
       // }
 
       &.active {
@@ -57,7 +57,6 @@ a {
         padding: 0;
         width: auto;
         margin-right: calc((var(--gap) / 2) * 3);
-
         &::after {
           content: "beta";
           color: white;
@@ -68,6 +67,8 @@ a {
           position: relative;
           bottom: 0px;
           font-size: 12px;
+          bottom: -30px;
+          left: 6px;
         }
 
         .logo-img {
@@ -238,7 +239,7 @@ a {
     border-radius: 4px;
     cursor: default;
     z-index: 2;
-    background-color: #057453;
+    background-color: #5A7D7C;
     color: #ffffff;
 
     &.active {
@@ -509,6 +510,19 @@ a {
       display: flex;
       align-items: center;
       grid-column-gap: var(--gap);
+      .app-logo {
+          &::after {
+            content: "beta";
+            color: white;
+            text-transform: uppercase;
+            border: 1px solid white;
+            border-radius: 5px;
+            padding: 0px 5px;
+            position: relative;
+            font-size: 12px;
+
+          }
+      }
     }
 
     .app-user {

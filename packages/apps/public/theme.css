@@ -35,7 +35,7 @@
   --font-inter: "Inter", Frutiger, "Frutiger Linotype", "Dejavu Sans",
     "Helvetica Neue", Arial, sans-serif;
 
-  --link-color: #057453;
+  --link-color: #5A7D7C;
   --link-light-color: #AAE6B9;
   --bg-page: #231F20;
   --header-background: #231f2000;
@@ -48,7 +48,7 @@
   --text-color: #f4f4f4;
   --title-color: #231F20;
   --button-color: #AAE6B9;
-  --button-background-hover: #057453;
+  --button-background-hover: #5A7D7C;
   --button-background-active: #AAE6B9;
   --input-background-color: #231F20;
   --input-border-color-hover: #231F20;
@@ -95,7 +95,7 @@
   --font-inter: "Inter", Frutiger, "Frutiger Linotype", "Dejavu Sans",
     "Helvetica Neue", Arial, sans-serif;
 
-  --link-color: #057453;
+  --link-color: #5A7D7C;
   --bg-page: #231F20;
   --header-background: #231F20;
   --header-text-color: #f4f4f4;
@@ -146,7 +146,7 @@
   --font-inter: "Inter", Frutiger, "Frutiger Linotype", "Dejavu Sans",
     "Helvetica Neue", Arial, sans-serif;
 
-    --link-color: #057453;
+    --link-color: #5A7D7C;
     --bg-page: #231F20;
     --header-background: #231F20;
     --header-text-color: #f4f4f4;
@@ -205,7 +205,7 @@
     rgba(230, 0, 167, 1) 69%,
     rgba(242, 0, 168, 1) 100%
   );
-  --link-color: #057453;
+  --link-color: #5A7D7C;
   --bg-page: #231F20;
   --header-background: #231F20;
   --header-text-color: #f4f4f4;

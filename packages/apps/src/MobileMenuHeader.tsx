@@ -50,6 +50,7 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
           icon={
             <img
               alt={`logo SNI`}
+              className='logo-image'
               src={String(sniLogo)} />
 
           }
