@@ -127,19 +127,19 @@ const NftMarket = ({ account, openPanel, setOpenPanel }: BuyTokensProps): ReactE
 
   return (
     <div className={marketClassName}>
-      <Header as='h1'>Market</Header>
+      <Header as='h1'>Bio-compendium</Header>
       <div
         className={`nft-market--panel ${openPanel === 'sort' ? 'long' : ''}`}
       >
-        { openPanel === 'tokens' && (
+        {openPanel === 'tokens' && (
           <Header
             as='h1'
             className='mobile-header'
           >
-            Market
+            Bio-compendium
           </Header>
         )}
-        { (openPanel === 'filters' || openPanel === 'sort') && (
+        {(openPanel === 'filters' || openPanel === 'sort') && (
           <Button.Group>
             <Button
               onClick={setOpenPanel && setOpenPanel.bind(null, 'filters')}
@@ -174,7 +174,7 @@ const NftMarket = ({ account, openPanel, setOpenPanel }: BuyTokensProps): ReactE
         <div className={`marketplace-body ${openPanel === 'tokens' ? 'open' : ''}`}>
           <div className='collection-search-form'>
             <SearchForm
-              areFiltersActive = {areFiltersActive}
+              areFiltersActive={areFiltersActive}
               clearAllFilters={clearAllFilters}
               filters={filters}
               offersCount={offersCount}
@@ -191,7 +191,7 @@ const NftMarket = ({ account, openPanel, setOpenPanel }: BuyTokensProps): ReactE
               <p className='no-tokens-text'>You have no tokens</p>
             </div>
           )}
-          { (Object.keys(offers).length > 0 || !offersLoading)
+          {(Object.keys(offers).length > 0 || !offersLoading)
             ? (
               <div className='market-pallet'>
                 <InfiniteScroll
@@ -233,7 +233,7 @@ const NftMarket = ({ account, openPanel, setOpenPanel }: BuyTokensProps): ReactE
         </div>
       </div>
       <div className={`nft-market--footer ${openPanel === 'sort' ? 'hide' : ''}`}>
-        { openPanel === 'tokens' && (
+        {openPanel === 'tokens' && (
           <>
             <Button
               className='footer-button'
@@ -245,7 +245,7 @@ const NftMarket = ({ account, openPanel, setOpenPanel }: BuyTokensProps): ReactE
             </Button>
           </>
         )}
-        { openPanel === 'filters' && (
+        {openPanel === 'filters' && (
           <Button
             className='footer-button clear'
             fluid

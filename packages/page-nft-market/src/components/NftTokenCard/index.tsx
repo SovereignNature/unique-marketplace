@@ -15,6 +15,13 @@ import formatPrice from '@polkadot/react-components/util/formatPrice';
 import { useDecoder, useSchema } from '@polkadot/react-hooks';
 import { formatKsmBalance } from '@polkadot/react-hooks/useKusamaApi';
 
+//===================================================//
+import Tilt from 'react-parallax-tilt';
+//===============================================//
+
+
+
+
 const { commission } = envConfig;
 
 interface Props {
@@ -25,7 +32,7 @@ interface Props {
 }
 
 const NftTokenCard = ({ account, collectionId, openDetailedInformationModal, token }: Props): React.ReactElement<Props> => {
-  const { collectionInfo, tokenName, tokenUrl } = useSchema(account, collectionId, token.tokenId);
+  const { attributes, collectionInfo, tokenName, tokenUrl } = useSchema(account, collectionId, token.tokenId);
   const { collectionName16Decoder, hex2a } = useDecoder();
 
   const getFee = useCallback((price: BN): BN => {
@@ -41,52 +48,66 @@ const NftTokenCard = ({ account, collectionId, openDetailedInformationModal, tok
   }, [collectionId, openDetailedInformationModal, token]);
 
   return (
-    <Card
-      className='token-card'
-      key={token.tokenId}
-      onClick={onCardClick}
+    <Tilt
+      className="parallax-effect"
+      perspective={500}
+      glareEnable={true} glareMaxOpacity={0.6} glareColor="#5A7D7C" glarePosition="all" glareBorderRadius="1px"
     >
-      { token && (
-        <Image
-          src={tokenUrl}
-          ui={false}
-          wrapped
-        />
-      )}
-      { !!(token && collectionInfo) && (
-        <Card.Content>
-          <Card.Description>
-            <div className='card-name'>
-              <div className='card-name__title'>{hex2a(collectionInfo.TokenPrefix)} {`#${token.tokenId}`} {tokenName?.value}</div>
-              <div className='card-name__field'>{ collectionName16Decoder(collectionInfo.Name)}</div>
-            </div>
-            { token.price && (
-              <div className='card-price'>
-                <div className='card-price__title'> {getMarketPrice(token.price)} KSM</div>
-              </div>
-            )}
-          </Card.Description>
-          <Card.Meta>
-            <span className='link'>View
-              <svg fill='none'
-                height='16'
-                viewBox='0 0 16 16'
-                width='16'
-                xmlns='http://www.w3.org/2000/svg'>
-                <path d='M2.5 8H13.5'
-                  stroke='var(--card-link-color)'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'/>
-                <path d='M9 3.5L13.5 8L9 12.5'
-                  stroke='var(--card-link-color)'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'/>
-              </svg>
-            </span>
-          </Card.Meta>
-        </Card.Content>
-      )}
-    </Card>
+      <div className="inner-element">
+        <Card
+          raised
+          className='token-card'
+          key={token.tokenId}
+          onClick={onCardClick}
+        >
+          {token && (
+            <Image
+              src={tokenUrl}
+              ui={false}
+              size='medium'
+              centered
+            />
+          )}
+          {!!(token && collectionInfo) && (
+            <Card.Content>
+              <Card.Description>
+                <div className='card-name'>
+                  {attributes && Object.values(attributes).length > 0 && (
+                    <div>
+                    {Object.keys(attributes).map((attrKey) => {
+                      if (!Array.isArray(attributes[attrKey])) {
+                        return <div className='card-name__title' key={attrKey}>{attributes[attrKey]}</div>;
+                      }
+
+                      return (
+                        <div className='card-name__title' key={attrKey}>{(attributes[attrKey] as string[]).join(' ')}</div>
+                      );
+                    })}
+                    </div>
+                  )}
+                  <div className='card-name__field'>{hex2a(collectionInfo.TokenPrefix)} {`#${token.tokenId}`} {tokenName?.value}</div>
+                  <div className='card-name__field'>{collectionName16Decoder(collectionInfo.Name)}</div>
+                </div>
+                {token.price && (
+                  <div className='card-price'>
+                    <div className='card-price__title'> {getMarketPrice(token.price)} KSM</div>
+                  </div>
+                )}
+              </Card.Description>
+              <Card.Meta>
+                <span className='link'>View
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.58984 16.59L13.1698 12L8.58984 7.41L9.99984 6L15.9998 12L9.99984 18L8.58984 16.59Z" fill="#AAE6B9" />
+                  </svg>
+                </span>
+              </Card.Meta>
+            </Card.Content>
+          )}
+        </Card>
+
+      </div >
+    </Tilt >
+
   );
 };
 

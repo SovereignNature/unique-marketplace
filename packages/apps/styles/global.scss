@@ -2,13 +2,16 @@
   width: 5px;
   height: 5px;
 }
+
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: var(--dropdown-scrollbar-color);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--dropdown-scrollbar-color);
 }
+
 ::-webkit-scrollbar-track {
   border-radius: 10px;
   background: var(--dropdown-scrollbar-track-color);
@@ -57,6 +60,7 @@ hr {
           color: var(--account-selector-name-color);
         }
       }
+
       .address {
         color: var(--account-selector-address-color);
       }
@@ -71,6 +75,7 @@ hr {
     .content {
       font-size: 18px;
     }
+
     .actions {
       display: flex;
       float: right;
@@ -225,7 +230,7 @@ h4.ui.header {
     padding: calc(var(--gap) / 3) calc(var(--gap) * 2);
     height: 48px;
 
-    & .menu > .item {
+    & .menu>.item {
       padding: calc(var(--gap) / 3) calc(var(--gap) * 2) !important;
     }
   }
@@ -250,13 +255,13 @@ h4.ui.header {
       border-radius: 0;
     }
 
-    & > .address {
+    &>.address {
       margin-left: 0;
       font: 500 12px/18px var(--font-roboto);
       color: var(--title-color);
     }
 
-    & > .name {
+    &>.name {
       margin-left: 0;
     }
   }
@@ -298,7 +303,7 @@ h4.ui.header {
   }
 }
 
-.ui.grid > .row {
+.ui.grid>.row {
   padding: 0 0 24px;
 }
 
@@ -541,16 +546,18 @@ button.ui.button,
 
 .go-back {
   display: flex;
+
   a {
     display: flex;
     flex-direction: row;
     grid-column-gap: 10px;
     align-items: center;
-    color: var(--card-link-color) !important;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
+    color: #AAE6B9 !important;
+    text-transform: uppercase;
   }
 }
 
@@ -574,6 +581,7 @@ button.ui.button,
   .ui--Modal-Column {
     margin-bottom: var(--gap);
   }
+
   .ui--InputAddress {
     border: 1px solid var(--border-color);
     background: var(--input-background-color);
@@ -688,13 +696,15 @@ button.ui.button,
           left: 95%;
           top: 7px;
 
-          &:after, &:before {
+          &:after,
+          &:before {
             left: 0;
           }
         }
 
         img {
           position: absolute;
+
           &.search-icon {
             left: var(--gap);
             top: calc(var(--gap) / 2);
@@ -716,8 +726,10 @@ button.ui.button,
     }
   }
 }
+
 .modalDescription {
   margin: 0 !important;
+
   div {
     p {
       margin: 0;
@@ -758,7 +770,7 @@ button.ui.button,
 }
 
 @media (max-width: 768px) {
-  .ui.grid > .row {
+  .ui.grid>.row {
     display: grid;
   }
 }

@@ -27,7 +27,7 @@ interface NftDetailsProps {
   account: string;
 }
 
-function NftDetails ({ account }: NftDetailsProps): React.ReactElement<NftDetailsProps> {
+function NftDetails({ account }: NftDetailsProps): React.ReactElement<NftDetailsProps> {
   const query = new URLSearchParams(useLocation().search);
   const tokenId = query.get('tokenId') || '';
   const collectionId = query.get('collectionId') || '';
@@ -148,7 +148,7 @@ function NftDetails ({ account }: NftDetailsProps): React.ReactElement<NftDetail
       <div className='token-info'>
         <div className='token-info--row'>
           <div className='token-info--row--image'>
-            { collectionInfo && (
+            {collectionInfo && (
               <Image
                 className='token-image-big'
                 src={tokenUrl}
@@ -156,24 +156,23 @@ function NftDetails ({ account }: NftDetailsProps): React.ReactElement<NftDetail
             )}
           </div>
           <div className='token-info--row--attributes'>
-            <Header as='h3'>
-              {collectionInfo && <span>{hex2a(collectionInfo.TokenPrefix)}</span>} #{tokenId}
-            </Header>
-            { attributes && Object.values(attributes).length > 0 && (
-              <div className='accessories'>
-                Attributes:
+            {attributes && Object.values(attributes).length > 0 && (
+              <Header as='h3'>
                 {Object.keys(attributes).map((attrKey) => {
                   if (!Array.isArray(attributes[attrKey])) {
-                    return <p key={attrKey}>{attrKey}: {attributes[attrKey]}</p>;
+                    return <h3 as='h3' key={attrKey}>{attributes[attrKey]}</h3>;
                   }
 
                   return (
-                    <p key={attrKey}>{attrKey}: {(attributes[attrKey] as string[]).join(', ')}</p>
+                    <h3 key={attrKey}>{(attributes[attrKey] as string[]).join(' ')}</h3>
                   );
                 })}
-              </div>
+              </Header>
             )}
-            { (tokenAsk && tokenAsk.price) && (
+            <div className='accessories'>
+              {collectionInfo && <span>{hex2a(collectionInfo.TokenPrefix)}</span>} #{tokenId}
+            </div>
+            {(tokenAsk && tokenAsk.price) && (
               <>
                 <Header as={'h2'}>
                   {getMarketPrice(tokenAsk.price)} KSM
@@ -184,50 +183,50 @@ function NftDetails ({ account }: NftDetailsProps): React.ReactElement<NftDetail
                     rel='noreferrer nooperer'
                     target='_blank'>Get testUNQ here</a></div>
                 )} */}
-                { (!uOwnIt && !transferStep && tokenAsk) && lowKsmBalanceToBuy && (
+                {(!uOwnIt && !transferStep && tokenAsk) && lowKsmBalanceToBuy && (
                   <div className='warning-block'>Your balance is too low to buy</div>
                 )}
               </>
             )}
             <div className='divider' />
-            { (uOwnIt && !uSellIt) && (
+            {(uOwnIt && !uSellIt) && (
               <Header as='h4'>You own it!</Header>
             )}
-            { uSellIt && (
+            {uSellIt && (
               <Header as='h4'>You`re selling it!</Header>
             )}
-            { isOwnerEscrow && (
+            {isOwnerEscrow && (
               <Header as='h5'>The owner is Escrow</Header>
             )}
 
-            { (!uOwnIt && tokenInfo && tokenInfo.Owner && tokenInfo.Owner.toString() !== escrowAddress && !tokenAsk?.owner) && (
+            {(!uOwnIt && tokenInfo && tokenInfo.Owner && tokenInfo.Owner.toString() !== escrowAddress && !tokenAsk?.owner) && (
               <Header as='h5'>The owner is {tokenInfo?.Owner?.toString()}</Header>
             )}
 
-            { (!uOwnIt && tokenInfo && tokenInfo.Owner && tokenInfo.Owner.toString() === escrowAddress && tokenAsk?.owner) && (
+            {(!uOwnIt && tokenInfo && tokenInfo.Owner && tokenInfo.Owner.toString() === escrowAddress && tokenAsk?.owner) && (
               <Header as='h5'>The owner is {tokenAsk?.owner.toString()}</Header>
             )}
             <div className='buttons'>
-              { (uOwnIt && !uSellIt) && (
+              {(uOwnIt && !uSellIt) && (
                 <Button
                   content='Transfer'
                   onClick={toggleTransferForm}
                 />
               )}
-              {(!account && tokenAsk) && (
+              {/* {(!account && tokenAsk) && (
 
                 <div>
                   <Button
-                    content='Buy it'
+                    content='Acquire'
                     disabled
                     title='ass'
                   />
                   <p className='text-with-button'>Сonnect your wallet to make transactions</p>
 
                 </div>
-              )}
+              )} */}
               <>
-                { (!uOwnIt && !transferStep && tokenAsk && kusamaFees) && (
+                {/* {(!uOwnIt && !transferStep && tokenAsk && kusamaFees) && (
                   <>
                     <div className='warning-block'>A small Kusama Network transaction fee up to {formatKsmBalance(kusamaFees.muln(2))} KSM will be
                       applied to the transaction</div>
@@ -237,20 +236,20 @@ function NftDetails ({ account }: NftDetailsProps): React.ReactElement<NftDetail
                       onClick={onBuy}
                     />
                   </>
-                )}
+                )} */}
 
-                { (uOwnIt && !uSellIt) && (
+                {/* {(uOwnIt && !uSellIt) && (
                   <Button
                     content='Sell'
                     onClick={onSell}
                   />
-                )}
-                { (uSellIt && !transferStep) && (
+                )} */}
+                {(uSellIt && !transferStep) && (
                   <Button
                     content={
                       <>
                         Delist
-                        { cancelStep && (
+                        {cancelStep && (
                           <Loader
                             active
                             inline='centered'
@@ -264,7 +263,7 @@ function NftDetails ({ account }: NftDetailsProps): React.ReactElement<NftDetail
               </>
             </div>
 
-            { (showTransferForm && collectionInfo) && (
+            {(showTransferForm && collectionInfo) && (
               <TransferModal
                 account={account}
                 closeModal={closeTransferModal}
@@ -274,13 +273,13 @@ function NftDetails ({ account }: NftDetailsProps): React.ReactElement<NftDetail
                 updateTokens={onTransferSuccess}
               />
             )}
-            { !!(transferStep && transferStep <= 3) && (
+            {!!(transferStep && transferStep <= 3) && (
               <SaleSteps step={transferStep} />
             )}
-            { !!(transferStep && transferStep >= 4) && (
+            {!!(transferStep && transferStep >= 4) && (
               <BuySteps step={transferStep - 3} />
             )}
-            { (!collectionInfo || (account && (!kusamaAvailableBalance || !balance))) && (
+            {(!collectionInfo || (account && (!kusamaAvailableBalance || !balance))) && (
               <Loader
                 active
                 className='load-info'
@@ -290,7 +289,7 @@ function NftDetails ({ account }: NftDetailsProps): React.ReactElement<NftDetail
           </div>
         </div>
       </div>
-      { readyToAskPrice && (
+      {readyToAskPrice && (
         <SetPriceModal
           closeModal={closeAskModal}
           onSavePrice={onSavePrice}

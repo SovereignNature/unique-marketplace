@@ -33,6 +33,13 @@ import MobileMenuHeader from './MobileMenuHeader';
 import ScrollToTop from './ScrollToTop';
 import WarmUp from './WarmUp';
 
+
+
+import sniLogo from '../src/images/-SNIlogo.svg';
+
+
+
+
 export const PORTAL_ID = 'portals';
 
 const NOT_FOUND: Route = {
@@ -47,7 +54,7 @@ const NOT_FOUND: Route = {
   text: 'Unknown'
 };
 
-function Apps ({ className = '' }: Props): React.ReactElement<Props> {
+function Apps({ className = '' }: Props): React.ReactElement<Props> {
   const location = useLocation();
   const { t } = useTranslation();
   const theme = useContext<ThemeDef>(ThemeContext);
@@ -80,6 +87,7 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
     <>
       <GlobalStyle uiHighlight={uiHighlight} />
       <ScrollToTop />
+
       <div className={`app-wrapper theme--${theme.theme} ${className}`}>
         <Signer>
           <ErrorBoundary
@@ -98,16 +106,16 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
                   className='header-menu'
                   tabular
                 >
-                  { theme.logo && (
+                  {theme.logo && (
                     <Menu.Item
                       active={location.pathname === '/'}
                       as={NavLink}
                       className='app-logo'
                       icon={
                         <img
-                          alt={`logo ${theme.theme}`}
-                          src={theme.logo}
-                        />
+                          alt={`logo SNI`}
+                          className="logo-img"
+                          src={String(sniLogo)} />
                       }
                       to='/'
                     />
@@ -115,7 +123,7 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
                   <Menu.Item
                     active={location.pathname === '/market'}
                     as={NavLink}
-                    name='market'
+                    name='Bio-compendium'
                     to='/market'
                   />
                   <Menu.Item
@@ -144,7 +152,7 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
                   />
                 </Menu>
                 <div className='app-user'>
-                  { (!isApiReady || !isApiConnected) && (
+                  {(!isApiReady || !isApiConnected) && (
                     <div>
                       <Loader
                         active
@@ -153,7 +161,7 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
                       />
                     </div>
                   )}
-                  { (isApiReady && isApiConnected) && (
+                  {(isApiReady && isApiConnected) && (
                     <>
                       <BalancesHeader
                         account={account}
@@ -173,34 +181,38 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
                 </div>
               </div>
             </header>
-            { openPanel === 'menu' && (
+            {openPanel === 'menu' && (
               <MobileMenu
                 account={account}
                 setOpenPanel={setOpenPanel}
                 theme={theme}
               />
             )}
-            { openPanel === 'accounts' && (
+            {openPanel === 'accounts' && (
               <ManageAccounts
                 account={account}
                 setAccount={setAccount}
                 setIsMobileMenu={setOpenPanel}
               />
             )}
-            { openPanel === 'balances' && (
+            {openPanel === 'balances' && (
               <ManageBalances
                 account={account}
                 setOpenPanel={setOpenPanel}
               />
             )}
-            { (openPanel !== 'accounts') && (
+            {(openPanel !== 'accounts') && (
               <Suspense fallback=''>
                 <main className={`app-main ${openPanel || ''} ${noAccounts ? 'no-accounts' : ''} ${!isPageFound ? 'page-no-found' : ''}`}>
                   <div className={`app-container ${openPanel === 'balances' ? 'is-balance-active' : ''}`}>
-                    { isApiConnected && isApiReady && noAccounts && (
+                    {isApiConnected && isApiReady && noAccounts && (
                       <div className='no-account'>
                         <div className='error-info-svg'>
-                          <img src = {String(infoSvg)} />
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 4.09375C7.1335 4.09375 3.59375 7.6335 3.59375 12C3.59375 16.3665 7.1335 19.9062 11.5 19.9062C15.8665 19.9062 19.4062 16.3665 19.4062 12C19.4062 7.6335 15.8665 4.09375 11.5 4.09375ZM2.15625 12C2.15625 6.83959 6.33959 2.65625 11.5 2.65625C16.6604 2.65625 20.8438 6.83959 20.8438 12C20.8438 17.1604 16.6604 21.3438 11.5 21.3438C6.33959 21.3438 2.15625 17.1604 2.15625 12Z"/>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0625 11.2812C10.0625 10.8843 10.3843 10.5625 10.7812 10.5625H11.5C11.897 10.5625 12.2188 10.8843 12.2188 11.2812V15.5938C12.6157 15.5938 12.9375 15.9155 12.9375 16.3125C12.9375 16.7095 12.6157 17.0312 12.2188 17.0312H11.5C11.103 17.0312 10.7812 16.7095 10.7812 16.3125V12C10.3843 12 10.0625 11.6782 10.0625 11.2812Z"/>
+                          <path d="M11.5 9.125C12.0954 9.125 12.5781 8.64231 12.5781 8.04688C12.5781 7.45144 12.0954 6.96875 11.5 6.96875C10.9046 6.96875 10.4219 7.45144 10.4219 8.04688C10.4219 8.64231 10.9046 9.125 11.5 9.125Z"/>
+                        </svg>
                         </div>
                         <div className='error-message-info'>
                           <div>
@@ -237,6 +249,7 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
           <Status />
         </Signer>
       </div>
+
       <WarmUp />
     </>
   );
