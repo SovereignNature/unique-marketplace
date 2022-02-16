@@ -1,5 +1,9 @@
 @import "../styles/global.scss";
 
+::selection {
+  background-color: #5A7D7C;
+  color: #FFFFFF;
+}
 
 .app-wrapper {
   box-sizing: border-box;
@@ -44,6 +48,7 @@ a {
 
       &:hover {
         background-color: rgba(255, 255, 255, 0.2);
+        color: #AAE6B9;
       }
 
       &.active {
@@ -394,7 +399,7 @@ a {
     margin-right: 8px;
     width: 16px;
     height: 16px;
-    color: var(--link-color);
+    color: #AAE6B9;
     display: inline-block;
     background: url("./images/warning-alert.svg") no-repeat;
     background-size: contain;
@@ -403,26 +408,34 @@ a {
 
 .no-account {
   display: flex;
-  background: #fef6da;
-  color: #dea513;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #AAE6B9;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
+  border-radius: 8px;
   line-height: 22px;
+  padding: 4px;
   margin: var(--gap) 0;
 
   span {
-    color: #1db0ff;
-  }
-
-  .error-message-info {
-    margin-left: 10px;
+    color: #ffffff;
+    transition: all .2s;
+    &:hover {
+      letter-spacing: 1px;
+    }
   }
 
   .error-info-svg {
     display: flex;
-    margin-left: 10px;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: 16px;
+
+    svg {
+      fill: #AAE6B9;
+    }
   }
 
   p {
@@ -649,6 +662,9 @@ a {
 //--------------------------- Device VI -------------//
 
 @media (max-width: 1024px) {
+  .no-account {
+    margin: var(--gap);
+  }
   .app-wrapper {
     background-color: var(--card-background);
   }
