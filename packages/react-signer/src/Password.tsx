@@ -173,10 +173,14 @@ export default React.memo(styled(Unlock)`
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #a9afbd;
-      border: 1px solid #a9afbd;
+      background-color: #322222;
+      border: 1px solid #322222;
       -webkit-transition: 0.4s;
       transition: 0.4s;
+
+      &:hover {
+        border: 1px solid #aae6b9;
+      }
     }
 
     .slider:before {
@@ -187,14 +191,14 @@ export default React.memo(styled(Unlock)`
       left: 1px;
       width: 14px;
 
-      background-color: white;
+      background-color: #322222;
       -webkit-transition: 0.4s;
       transition: 0.4s;
     }
 
     input:checked + .slider {
-      background-color: #1db0ff;
-      border: 1px solid #1db0ff;
+      background-color: #5A7D7C;
+      border: 1px solid #5A7D7C;
     }
 
     input:checked + .slider:before {

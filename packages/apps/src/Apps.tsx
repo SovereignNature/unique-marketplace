@@ -33,6 +33,8 @@ import MobileMenu from './MobileMenu';
 import MobileMenuHeader from './MobileMenuHeader';
 import ScrollToTop from './ScrollToTop';
 
+import sniLogo from '../src/images/-SNIlogo.svg';
+
 export const PORTAL_ID = 'portals';
 
 const NOT_FOUND: Route = {
@@ -105,9 +107,9 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
                           className='app-logo'
                           icon={
                             <img
-                              alt={`logo ${theme.theme}`}
-                              src={theme.logo}
-                            />
+                            alt={`logo SNI`}
+                            className="logo-img"
+                            src={String(sniLogo)} />
                           }
                           to='/'
                         />

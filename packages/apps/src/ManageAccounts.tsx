@@ -10,7 +10,7 @@ import { AccountName, IdentityIcon } from '@polkadot/react-components';
 import { useAccounts } from '@polkadot/react-hooks';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 
-import infoBlue from './images/infoBlue.svg';
+import info from './images/info.svg';
 
 interface Props {
   account?: string;
@@ -72,7 +72,7 @@ const ManageAccounts = (props: Props): React.ReactElement<Props> => {
         <div className='info-panel'>
           <img
             alt='info'
-            src={infoBlue as string}
+            src={info as string}
           />
           Click on image to copy the address
         </div>

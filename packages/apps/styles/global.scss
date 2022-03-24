@@ -2,13 +2,16 @@
   width: 5px;
   height: 5px;
 }
+
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: var(--dropdown-scrollbar-color);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--dropdown-scrollbar-color);
 }
+
 ::-webkit-scrollbar-track {
   border-radius: 10px;
   background: var(--dropdown-scrollbar-track-color);
@@ -263,7 +266,7 @@ h4.ui.header {
     & > .address {
       margin-left: 0;
       font: 500 12px/18px var(--font-roboto);
-      color: var(--title-color);
+      color: #5A7D7C;
     }
 
     & > .name {
@@ -317,7 +320,7 @@ form {
     .ui.selection.dropdown {
       border: 1px solid var(--border-color);
       border-radius: calc(var(--bradius) * 2);
-      background: var(--input-background-color);
+      background: #aae6b9;
       font: 400 16px/24px var(--font-roboto);
       margin: 0;
       height: 40px;
@@ -603,6 +606,9 @@ button.ui.button,.ui--Button,.button-link {
 
 .ui--InputBalance {
   .ui--Labelled-content {
+    &:hover {
+      cursor: pointer;
+    }
     .ui.input.ui--Input {
       input {
         width: auto;

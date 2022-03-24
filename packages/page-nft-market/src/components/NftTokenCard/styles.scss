@@ -13,7 +13,7 @@
     }
 
     &:hover {
-      border: 1px solid var(--card-border-color) !important;
+      border: 1px solid #AAE6B9 !important;
       background: var(--card-background);
     }
 
@@ -39,6 +39,7 @@
       justify-content: center;
 
       img {
+        background: rgba($color: #AAE6B9, $alpha: 0.5);
         max-width: 100%;
         max-height: 100%;
         width: auto;

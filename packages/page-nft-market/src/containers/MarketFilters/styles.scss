@@ -1,9 +1,52 @@
 .filter-main {
-  background: #ffffff;
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   width: 280px;
   height: fit-content;
+
+  input[type="checkbox"] {
+    margin-bottom: 11px;
+    position: relative;
+    cursor: pointer;
+    width: 0;
+  }
+  
+  input[type="checkbox"]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--card-border-color);
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  input[type="checkbox"]:checked:before {
+    border-radius: 4px;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--link-color);
+  }
+
+  input[type="checkbox"]:checked:after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 13px;
+    border: 1px solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 6px;
+  }
 }
 
 .filter {
@@ -138,10 +181,14 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #a9afbd;
-  border: 1px solid #a9afbd;
+  background-color: #322222;
+  border: 1px solid #322222;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+
+  &:hover {
+    border: 1px solid #aae6b9;
+  }
 }
 .disable-token {
   background-color: #ffffff !important;
@@ -164,14 +211,14 @@
   left: 1px;
   width: 14px;
 
-  background-color: white;
+  background-color: #322222;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
-input:checked + .slider {
-  background-color: #1db0ff;
-  border: 1px solid #1db0ff;
+input:checked+.slider {
+  background-color: #5A7D7C;
+  border: 1px solid #5A7D7C;
 }
 
 input:checked + .slider:before {

@@ -9,7 +9,6 @@ import { Filters } from '@polkadot/app-nft-market/containers/NftMarket';
 import { NftCollectionInterface } from '@polkadot/react-hooks/useCollection';
 
 import FilterContainer from './FilterContainer';
-import TreatsFilter from './TreatsFilter';
 
 interface PropTypes {
   account: string | undefined;
@@ -34,10 +33,6 @@ const MarketFilters = ({ account, allowClearFilters, collections, filters, loadi
         loadingCollections={loadingCollections}
         setAllowClearFilters={setAllowClearFilters}
         setAreFiltersActive={setAreFiltersActive}
-        setFilters={setFilters}
-      />
-      <TreatsFilter
-        filters={filters}
         setFilters={setFilters}
       />
     </div>

@@ -4,6 +4,7 @@
 import React, { memo, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
+import sniLogo from '../src/images/-SNIlogo.svg';
 import { OpenPanelType } from '@polkadot/apps-routing/types';
 
 interface Props {
@@ -28,10 +29,9 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
   return (
     <div className={`menu-mobile ${account ? '' : 'no-accounts'}`}>
       <div className='menu-mobile--logo'>
-        <img
-          alt={`logo ${theme.theme}`}
-          src={theme.logo}
-        />
+      <img
+          alt={`logo SNI`}
+          src={String(sniLogo)} />
       </div>
       <NavLink
         className={'menu-mobile--link'}

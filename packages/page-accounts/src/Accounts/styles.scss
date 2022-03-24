@@ -67,7 +67,7 @@
           .item {
 
             &--address {
-              color: var(--input-placeholder-search-color);
+              color: rgba(255,255,255,0.5);
               font-size: 14px;
               display: flex;
               grid-column-gap: 10px;

@@ -7,6 +7,8 @@ import React, { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import Menu from 'semantic-ui-react/dist/commonjs/collections/Menu';
 
+import sniLogo from '../src/images/-SNIlogo.svg';
+
 interface Props {
   isMobileMenu: OpenPanelType;
   setIsMobileMenu: (isOpen: OpenPanelType) => void;
@@ -29,17 +31,17 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
             width='32'
             xmlns='http://www.w3.org/2000/svg'>
             <path d='M5 16H27'
-              stroke='#040B1D'
+              stroke='#AAE6B9'
               strokeLinecap='round'
               strokeLinejoin='round'
               strokeWidth='2'/>
             <path d='M5 8H27'
-              stroke='#040B1D'
+              stroke='#AAE6B9'
               strokeLinecap='round'
               strokeLinejoin='round'
               strokeWidth='2'/>
             <path d='M5 24H27'
-              stroke='#040B1D'
+              stroke='#AAE6B9'
               strokeLinecap='round'
               strokeLinejoin='round'
               strokeWidth='2'/>
@@ -74,9 +76,9 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
           className='app-logo'
           icon={
             <img
-              alt={`logo ${theme.theme}`}
-              src={theme.logo}
-            />
+              alt={`logo SNI`}
+              className='logo-image'
+              src={String(sniLogo)} />
           }
           to='/'
         />

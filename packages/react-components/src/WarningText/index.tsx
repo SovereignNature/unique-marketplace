@@ -17,7 +17,7 @@ function WarningText ({ className = 'info', text }: WarningTextProps): ReactElem
     <div className={`warning-text ${className}`}>
       <img
         alt='info-icon'
-        src={(className.includes('info') ? infoIcon : warningIcon) as string}
+        src={(infoIcon) as string}
       />
       {text}
     </div>
@@ -26,7 +26,7 @@ function WarningText ({ className = 'info', text }: WarningTextProps): ReactElem
 
 export default memo(styled(WarningText)`
   display: flex;
-  background-color: var(--modal-warning-background-color);
+  background-color: rgba(170, 230, 185, 0.486);
   align-items: center;
   padding: calc(var(--gap) / 2);
   border-radius: calc(var(--gap) / 4);
@@ -38,13 +38,13 @@ export default memo(styled(WarningText)`
   margin-bottom: 0;
 
   &.warning {
-    color: var(--warning-text-color);
-    background-color: var(--warning-background-color);
+    color: #AAE6B9;
+    background-color: rgba(170, 230, 185, 0.486);
   }
 
   &.info {
-    color: var(--info-text-color);
-    background-color: var(--info-background-color);
+    color: #AAE6B9;
+    background-color: rgba(170, 230, 185, 0.486);
   }
 
   &.no-margin {

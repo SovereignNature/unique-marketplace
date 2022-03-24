@@ -34,7 +34,8 @@ export default React.memo(styled(Body)`
   background: var(--bg-table);
 
       .trades-row:hover{
-      background-color: #EBF8FF;
+      background-color: rgba(255,255,255, 0.2);
+      cursor: pointer;
     }
 
   td {
@@ -143,9 +144,15 @@ export default React.memo(styled(Body)`
       font-size:12px;
     }
 
+    &.token-id {
+      a:hover {
+        color: #AAE6B9;
+      }
+    }
+
      &.token-id:hover {
       cursor:pointer;
-      color: #1DB0FF;
+      color: #AAE6B9;
       text-decoration: underline;
     }
     &.box-buyer-seler{
