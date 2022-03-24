@@ -26,6 +26,8 @@ import Signer from '@polkadot/react-signer';
 import BalancesHeader from './BalancesHeader';
 import Contracts from './ContractContext';
 import Footer from './Footer';
+import Main from './Main';
+import SaduLandingPage from './SaduLandingPage';
 import ManageAccounts from './ManageAccounts';
 import ManageBalances from './ManageBalances';
 import MobileAccountSelector from './MobileAccountSelector';
@@ -75,172 +77,183 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
 
   const isLocationAccounts = location.pathname.slice(1) === 'accounts';
   const noAccounts = !account && !isLocationAccounts;
+  const auth = false;
 
-  return (
-    <>
-      <GlobalStyle uiHighlight={uiHighlight} />
-      <ScrollToTop />
-      <div className={`app-wrapper theme--${theme.theme} ${className}`}>
-        <Signer>
-          <ErrorBoundary
-            isPageFound={isPageFound}
-            setIsPageFound={setIsPageFound}
-            trigger={name}
-          >
-            <Contracts account={account}>
-              <>
-                <header className='app-header'>
-                  <div className='app-container app-container--header'>
-                    <MobileMenuHeader
-                      isMobileMenu={openPanel}
-                      setIsMobileMenu={setOpenPanel}
-                      theme={theme}
-                    />
-                    <Menu
-                      className='header-menu'
-                      tabular
-                    >
-                      { theme.logo && (
+  if (!auth) {
+    return (
+      <>
+        <GlobalStyle uiHighlight={uiHighlight} />
+        <ScrollToTop />
+        <div className={`app-wrapper theme--${theme.theme} ${className}`}>
+          <Signer>
+            <ErrorBoundary
+              isPageFound={isPageFound}
+              setIsPageFound={setIsPageFound}
+              trigger={name}
+            >
+              <Contracts account={account}>
+                <>
+                  <header className='app-header'>
+                    <div className='app-container app-container--header'>
+                      <MobileMenuHeader
+                        isMobileMenu={openPanel}
+                        setIsMobileMenu={setOpenPanel}
+                        theme={theme}
+                      />
+                      <Menu
+                        className='header-menu'
+                        tabular
+                      >
+                        { theme.logo && (
+                          <Menu.Item
+                            active={location.pathname === '/'}
+                            as={NavLink}
+                            className='app-logo'
+                            icon={
+                              <img
+                              alt={`logo SNI`}
+                              className="logo-img"
+                              src={String(sniLogo)} />
+                            }
+                            to='/'
+                          />
+                        )}
                         <Menu.Item
-                          active={location.pathname === '/'}
+                          active={location.pathname === '/market'}
                           as={NavLink}
-                          className='app-logo'
-                          icon={
-                            <img
-                            alt={`logo SNI`}
-                            className="logo-img"
-                            src={String(sniLogo)} />
-                          }
-                          to='/'
+                          name='market'
+                          to='/market'
                         />
-                      )}
-                      <Menu.Item
-                        active={location.pathname === '/market'}
-                        as={NavLink}
-                        name='market'
-                        to='/market'
-                      />
-                      <Menu.Item
-                        active={location.pathname === '/wallet'}
-                        as={NavLink}
-                        name='myTokens'
-                        to='/wallet'
-                      />
-                      <Menu.Item
-                        active={location.pathname === '/trades'}
-                        as={NavLink}
-                        name='trades'
-                        to='/trades'
-                      />
-                      <Menu.Item
-                        active={location.pathname === '/accounts'}
-                        as={NavLink}
-                        name='accounts'
-                        to='/accounts'
-                      />
-                      <Menu.Item
-                        active={location.pathname === '/faq'}
-                        as={NavLink}
-                        name='FAQ'
-                        to='/faq'
-                      />
-                    </Menu>
-                    <div className='app-user'>
-                      { (!isApiReady || !isApiConnected) && (
-                        <div>
-                          <Loader
-                            active
-                            className='centered'
-                            inline='centered'
-                          />
-                        </div>
-                      )}
-                      { (isApiReady && isApiConnected) && (
-                        <>
-                          <BalancesHeader
-                            account={account}
-                            isMobileMenu={openPanel}
-                            setOpenPanel={setOpenPanel}
-                          />
-                          <div className='account-selector-block'>
-                            <AccountSelector onChange={setAccount} />
-                            <MobileAccountSelector
-                              address={account}
-                              openPanel={openPanel}
-                              setOpenPanel={setOpenPanel}
+                        <Menu.Item
+                          active={location.pathname === '/wallet'}
+                          as={NavLink}
+                          name='myTokens'
+                          to='/wallet'
+                        />
+                        <Menu.Item
+                          active={location.pathname === '/trades'}
+                          as={NavLink}
+                          name='trades'
+                          to='/trades'
+                        />
+                        <Menu.Item
+                          active={location.pathname === '/accounts'}
+                          as={NavLink}
+                          name='accounts'
+                          to='/accounts'
+                        />
+                        <Menu.Item
+                          active={location.pathname === '/faq'}
+                          as={NavLink}
+                          name='FAQ'
+                          to='/faq'
+                        />
+                        <Menu.Item
+                          active={location.pathname === '/landing'}
+                          as={NavLink}
+                          name='Landing page'
+                          to='/landing'
+                        />
+                      </Menu>
+                      <div className='app-user'>
+                        { (!isApiReady || !isApiConnected) && (
+                          <div>
+                            <Loader
+                              active
+                              className='centered'
+                              inline='centered'
                             />
                           </div>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                </header>
-                { openPanel === 'menu' && (
-                  <MobileMenu
-                    account={account}
-                    setOpenPanel={setOpenPanel}
-                    theme={theme}
-                  />
-                )}
-                { openPanel === 'accounts' && (
-                  <ManageAccounts
-                    account={account}
-                    setAccount={setAccount}
-                    setIsMobileMenu={setOpenPanel}
-                  />
-                )}
-                { openPanel === 'balances' && (
-                  <ManageBalances
-                    setOpenPanel={setOpenPanel}
-                  />
-                )}
-                { (openPanel !== 'accounts') && (
-                  <Suspense fallback=''>
-                    <main className={`app-main ${openPanel || ''} ${noAccounts ? 'no-accounts' : ''} ${!isPageFound ? 'page-no-found' : ''}`}>
-                      <div className={`app-container ${openPanel === 'balances' ? 'is-balance-active' : ''}`}>
-                        { noAccounts && (
+                        )}
+                        { (isApiReady && isApiConnected) && (
                           <>
-                            <WarningText
-                              className='warning no-margin'
-                              text={(
-                                <>
-                                  Some features are currently hidden and will only become available once you connect your wallet. You can create new or add your existing substrate account on the <Link to='accounts'><span>account page</span></Link>
-                                </>
-                              )}
+                            <BalancesHeader
+                              account={account}
+                              isMobileMenu={openPanel}
+                              setOpenPanel={setOpenPanel}
                             />
-                            <br />
+                            <div className='account-selector-block'>
+                              <AccountSelector onChange={setAccount} />
+                              <MobileAccountSelector
+                                address={account}
+                                openPanel={openPanel}
+                                setOpenPanel={setOpenPanel}
+                              />
+                            </div>
                           </>
                         )}
-                        {
-                          isPageFound
-                            ? (
-                              <>
-                                <Component
-                                  account={account}
-                                  basePath={`/${name}`}
-                                  location={location}
-                                  onStatusChange={queueAction}
-                                  openPanel={openPanel}
-                                  setOpenPanel={setOpenPanel}
-                                />
-                                <div id={PORTAL_ID} />
-                              </>
-                            )
-                            : <PageNotFound />
-                        }
                       </div>
-                    </main>
-                  </Suspense>
-                )}
-              </>
-            </Contracts>
-          </ErrorBoundary>
-          <Footer />
-          <Status />
-        </Signer>
-      </div>
-    </>
-  );
+                    </div>
+                  </header>
+                  { openPanel === 'menu' && (
+                    <MobileMenu
+                      account={account}
+                      setOpenPanel={setOpenPanel}
+                      theme={theme}
+                    />
+                  )}
+                  { openPanel === 'accounts' && (
+                    <ManageAccounts
+                      account={account}
+                      setAccount={setAccount}
+                      setIsMobileMenu={setOpenPanel}
+                    />
+                  )}
+                  { openPanel === 'balances' && (
+                    <ManageBalances
+                      setOpenPanel={setOpenPanel}
+                    />
+                  )}
+                  { (openPanel !== 'accounts') && (
+                    <Suspense fallback=''>
+                      <main className={`app-main ${openPanel || ''} ${noAccounts ? 'no-accounts' : ''} ${!isPageFound ? 'page-no-found' : ''}`}>
+                        <div className={`app-container ${openPanel === 'balances' ? 'is-balance-active' : ''}`}>
+                          { noAccounts && (
+                            <>
+                              <WarningText
+                                className='warning no-margin'
+                                text={(
+                                  <>
+                                    Some features are currently hidden and will only become available once you connect your wallet. You can create new or add your existing substrate account on the <Link to='accounts'><span>account page</span></Link>
+                                  </>
+                                )}
+                              />
+                              <br />
+                            </>
+                          )}
+                          {
+                            isPageFound
+                              ? (
+                                <>
+                                  <Component
+                                    account={account}
+                                    basePath={`/${name}`}
+                                    location={location}
+                                    onStatusChange={queueAction}
+                                    openPanel={openPanel}
+                                    setOpenPanel={setOpenPanel}
+                                  />
+                                  <div id={PORTAL_ID} />
+                                </>
+                              )
+                              : <PageNotFound />
+                          }
+                        </div>
+                      </main>
+                    </Suspense>
+                  )}
+                </>
+              </Contracts>
+            </ErrorBoundary>
+            <Footer />
+            <Status />
+          </Signer>
+        </div>
+      </>
+    );
+  } else {
+    return (<SaduLandingPage />);
+  }
 }
 
 export default React.memo(Apps);
