@@ -450,7 +450,17 @@ a {
 .menu-mobile-header {
   .menu-icon {
     cursor: pointer;
+    transition: all .2s;
+
+    &.active {
+      svg {
+        path {
+          fill: #AAE6B9;
+        }
+      }
+    }
   }
+
 }
 
 .create-account.menu {
