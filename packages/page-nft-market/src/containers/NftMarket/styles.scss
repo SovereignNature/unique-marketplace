@@ -222,20 +222,21 @@
 
       .item {
         .text{
-          color: var(--black-color);
+          
+          color: #b1b1b1;
 
           & svg {
-            fill: var(--black-color);
+            fill: #b1b1b1;
           }
         }
 
         &:hover{
           background-color: transparent;
           .text{
-            color: var(--link-color);
+            color: #fff;
 
             & svg {
-              fill: var(--link-color);
+              fill: #fff;
             }
           }
         }
