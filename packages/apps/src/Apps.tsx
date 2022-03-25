@@ -33,7 +33,7 @@ import MobileMenu from './MobileMenu';
 import MobileMenuHeader from './MobileMenuHeader';
 import ScrollToTop from './ScrollToTop';
 
-import sniLogo from '../src/images/-SNIlogo.svg';
+import sadulogo from '../src/images/sadu-logo.png';
 
 export const PORTAL_ID = 'portals';
 
@@ -107,9 +107,9 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
                           className='app-logo'
                           icon={
                             <img
-                            alt={`logo SNI`}
+                            alt={`Sadu logo`}
                             className="logo-img"
-                            src={String(sniLogo)} />
+                            src={String(sadulogo)} />
                           }
                           to='/'
                         />

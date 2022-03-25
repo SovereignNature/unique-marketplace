@@ -7,7 +7,7 @@ import React, { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import Menu from 'semantic-ui-react/dist/commonjs/collections/Menu';
 
-import sniLogo from '../src/images/-SNIlogo.svg';
+import saduLogo from '../src/images/sadu-logo.png';
 
 interface Props {
   isMobileMenu: OpenPanelType;
@@ -76,9 +76,9 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
           className='app-logo'
           icon={
             <img
-              alt={`logo SNI`}
+              alt={`Sadu logo`}
               className='logo-image'
-              src={String(sniLogo)} />
+              src={String(saduLogo)} />
           }
           to='/'
         />
