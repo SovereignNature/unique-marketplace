@@ -64,19 +64,6 @@ a {
         padding: 0;
         width: auto;
         margin-right: calc((var(--gap) / 2) * 3);
-        &::after {
-          content: "beta";
-          color: white;
-          text-transform: uppercase;
-          border: 1px solid white;
-          border-radius: 5px;
-          padding: 0px 5px;
-          position: relative;
-          bottom: 0px;
-          font-size: 12px;
-          bottom: -30px;
-          left: 6px;
-        }
 
         &:hover {
           background: transparent;
@@ -532,19 +519,6 @@ a {
       display: flex;
       align-items: center;
       grid-column-gap: var(--gap);
-      .app-logo {
-          &::after {
-            content: "beta";
-            color: white;
-            text-transform: uppercase;
-            border: 1px solid white;
-            border-radius: 5px;
-            padding: 0px 5px;
-            position: relative;
-            font-size: 12px;
-
-          }
-      }
     }
 
     .app-user {
