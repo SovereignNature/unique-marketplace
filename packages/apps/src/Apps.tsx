@@ -101,18 +101,12 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
                       tabular
                     >
                       { theme.logo && (
-                        <Menu.Item
-                          active={location.pathname === '/'}
-                          as={NavLink}
-                          className='app-logo'
-                          icon={
-                            <img
-                            alt={`Sadu logo`}
-                            className="logo-img"
-                            src={String(sadulogo)} />
-                          }
-                          to='/'
-                        />
+                        <a className='icon item app-logo active' href='https://sadu.sovereignnature.ch/'>
+                          <img
+                          alt={`Sadu logo`}
+                          className="logo-img"
+                          src={String(sadulogo)} />
+                        </a>
                       )}
                       <Menu.Item
                         active={location.pathname === '/market'}
