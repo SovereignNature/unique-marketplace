@@ -4,76 +4,19 @@
 import React, { memo, ReactElement } from 'react';
 import styled from 'styled-components';
 
-import discord from '../../public/logos/discord.svg';
-import github from '../../public/logos/github.svg';
-import subsocial from '../../public/logos/subsocial.svg';
-import telegram from '../../public/logos/telegram.svg';
-import twitter from '../../public/logos/twitter.svg';
-
 function Footer ({ className = '' }): ReactElement {
   return (
     <div className={`app-footer ${className || ''}`}>
       <div className='app-footer--container'>
         <div className='app-footer__info'>
           <div className='app-footer__info__powered'>Powered by <a
-            href='https://unique.network/'
+            href='https://sovereignnature.com/'
             rel='noreferrer nooperer'
-            target='_blank'
-          >Unique Network</a> —
-            the NFT chain build for Polkadot and Kusama.
+            target='_blank'>SNI</a> | Built on
+          <a href='https://unique.network/'
+            rel='noreferrer nooperer'
+            target='_blank'> Unique Network</a>
           </div>
-        </div>
-        <div className='app-footer__social-links'>
-          <a
-            href='https://t.me/Uniquechain'
-            rel='noreferrer nooperer'
-            target='_blank'
-          >
-            <img
-              alt='telegram'
-              src={telegram as string}
-            />
-          </a>
-          <a
-            href='https://twitter.com/Unique_NFTchain'
-            rel='noreferrer nooperer'
-            target='_blank'
-          >
-            <img
-              alt='twitter'
-              src={twitter as string}
-            />
-          </a>
-          <a
-            href='https://discord.gg/jHVdZhsakC'
-            rel='noreferrer nooperer'
-            target='_blank'
-          >
-            <img
-              alt='discord'
-              src={discord as string}
-            />
-          </a>
-          <a
-            href='https://github.com/UniqueNetwork'
-            rel='noreferrer nooperer'
-            target='_blank'
-          >
-            <img
-              alt='github'
-              src={github as string}
-            />
-          </a>
-          <a
-            href='https://app.subsocial.network/@UniqueNetwork_NFT'
-            rel='noreferrer nooperer'
-            target='_blank'
-          >
-            <img
-              alt='subsocial'
-              src={subsocial as string}
-            />
-          </a>
         </div>
       </div>
     </div>

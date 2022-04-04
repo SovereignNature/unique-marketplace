@@ -162,25 +162,32 @@ hr {
   }
 }
 
+
 h1.ui.header {
-  font: 700 36px/48px var(--font-inter);
-  color: var(--title-color);
+  font-size: 40px;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #FFF;
   margin-bottom: calc(var(--gap) / 0.6);
 }
 
 h2.ui.header {
-  font: 700 28px/38px var(--font-inter);
-  color: var(--title-color);
-  margin-bottom: calc(var(--gap) / 2);
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #FFF;
+  margin-bottom: calc(var(--gap) / 0.6);
 }
 
 h4.ui.header {
-  font: 400 18px/27px var(--font-roboto);
-  margin: 0;
-  color: var(--title-color);
-  letter-spacing: 0.1em;
-  margin-bottom: var(--gap);
-  min-height: 60px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 2;
+  margin-bottom: 32px;
+  word-spacing: 4px;
 }
 
 .ui--LabelHelp {
@@ -717,6 +724,15 @@ button.ui.button,.ui--Button,.button-link {
   box-shadow: 0 4px 12px var(--card-shadow);
   border-radius: 4px;
   padding: 32px;
+
+  .about-sadu {
+    font-size: 16px;
+    color: #fff;
+    line-height: 2;
+    margin-bottom: 40px;
+    word-spacing: 4px;
+  }
+
 }
 
 .unique-modal.ui.modal.ui--Modal {

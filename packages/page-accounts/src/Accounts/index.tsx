@@ -54,7 +54,7 @@ function Overview ({ className = 'page-accounts' }: Props): React.ReactElement<P
       <Header
         as='h1'
         className='mobile-header'
-      >Manage accounts</Header>
+      >Wallets</Header>
       <div className='page-accounts--card'>
         <div className='page-accounts--card--header'>
           <AccountButtonsGroup onStatusChange={queueAction} />

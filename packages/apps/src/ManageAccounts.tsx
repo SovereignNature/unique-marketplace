@@ -41,7 +41,7 @@ const ManageAccounts = (props: Props): React.ReactElement<Props> => {
         className='manage-accounts--link'
         onClick={onAccounts}
       >
-        Manage accounts
+        Wallets
       </a>
       <header>Choose the account</header>
       <div className='accounts-list'>

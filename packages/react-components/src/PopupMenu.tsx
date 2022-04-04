@@ -58,7 +58,7 @@ const PopupMenu = (props: Props) => {
                     strict={true}
                     to={'/faq'}
                   >learn more
-                  </NavLink> in FAQ
+                  </NavLink> in our FAQ
                 </div>
               )}
               on='click'

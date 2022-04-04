@@ -55,8 +55,8 @@ function PageNftWallet ({ account, basePath, openPanel, setOpenPanel }: Props): 
       )}
       { !location.pathname.includes('token-details') && !location.pathname.includes('manage-') && (
         <>
-          <Header as='h1'>My Tokens</Header>
-          <Header as='h4'>NFTs owned by me</Header>
+          <Header as='h1'>My Gallery</Header>
+          
         </>
       )}
       { (isApiReady && isApiConnected) && (

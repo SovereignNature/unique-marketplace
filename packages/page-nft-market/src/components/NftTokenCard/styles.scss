@@ -7,14 +7,17 @@
     margin: 10px;
     border: 1px solid var(--card-border-color) !important;
     background: var(--card-background);
+    text-decoration: none !important;
+    box-shadow: none !important;
 
     .link {
-      color: var(--card-link-color);
+      color: #fff;
     }
 
     &:hover {
-      border: 1px solid #AAE6B9 !important;
+      border: 3px solid #200237 !important;
       background: var(--card-background);
+      color: #200237;
     }
 
     .content {

@@ -23,7 +23,6 @@ import GlobalStyle from '@polkadot/react-components/styles';
 import { useApi } from '@polkadot/react-hooks';
 import Signer from '@polkadot/react-signer';
 
-import BalancesHeader from './BalancesHeader';
 import Contracts from './ContractContext';
 import Footer from './Footer';
 import ManageAccounts from './ManageAccounts';
@@ -111,31 +110,31 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
                       <Menu.Item
                         active={location.pathname === '/market'}
                         as={NavLink}
-                        name='market'
+                        name='Exhibition'
                         to='/market'
                       />
                       <Menu.Item
                         active={location.pathname === '/wallet'}
                         as={NavLink}
-                        name='myTokens'
+                        name='My gallery'
                         to='/wallet'
                       />
                       <Menu.Item
                         active={location.pathname === '/trades'}
                         as={NavLink}
-                        name='trades'
+                        name='Trades'
                         to='/trades'
                       />
                       <Menu.Item
                         active={location.pathname === '/accounts'}
                         as={NavLink}
-                        name='accounts'
+                        name='Wallets'
                         to='/accounts'
                       />
                       <Menu.Item
                         active={location.pathname === '/faq'}
                         as={NavLink}
-                        name='FAQ'
+                        name='About Sādu'
                         to='/faq'
                       />
                     </Menu>
@@ -151,11 +150,6 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
                       )}
                       { (isApiReady && isApiConnected) && (
                         <>
-                          <BalancesHeader
-                            account={account}
-                            isMobileMenu={openPanel}
-                            setOpenPanel={setOpenPanel}
-                          />
                           <div className='account-selector-block'>
                             <AccountSelector onChange={setAccount} />
                             <MobileAccountSelector
@@ -198,7 +192,7 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
                               className='warning no-margin'
                               text={(
                                 <>
-                                  Some features are currently hidden and will only become available once you connect your wallet. You can create new or add your existing substrate account on the <Link to='accounts'><span>account page</span></Link>
+                                  Some features are currently hidden and will only become available once you connect your wallet. You can create new or add your existing substrate account on the <Link to='accounts'><span>wallets page</span></Link>
                                 </>
                               )}
                             />

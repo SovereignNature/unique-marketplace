@@ -119,12 +119,10 @@ function NftWallet ({ account, collections, openPanel, removeCollectionFromList,
           as='h1'
           className='mobile-header'
         >
-          My tokens
+          NFTs owned by me
         </Header>
       )}
-      <Header as='h3'>
-        My collections
-      </Header>
+      <Header as='h4' className='gallery-subtitle'>NFTs owned by me</Header>
       { !collections?.length && (
         <div className='empty-label'>
           You haven`t added anything yet. Use the collection search.

@@ -136,7 +136,7 @@ const SearchForm = (props: SearchFormProps) => {
           loading={offersLoading}
           searchString={searchString}
           setSearchString={setSearchString}
-          placeholder='Search by token name/attributes'
+          placeholder='Search by attributes'
         />
       </Form.Field>
       <Form.Field className='sort-field'>

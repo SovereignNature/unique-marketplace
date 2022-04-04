@@ -159,7 +159,7 @@ const NftMarket = ({ account, openPanel, setOpenPanel }: NftMarketProps): ReactE
 
   return (
     <div className={marketClassName}>
-      <Header as='h1'>Market</Header>
+      <Header as='h1'>Exhibition</Header>
       <div
         className={`nft-market--panel ${openPanel === 'sort' ? 'long' : ''}`}
       >
@@ -168,7 +168,7 @@ const NftMarket = ({ account, openPanel, setOpenPanel }: NftMarketProps): ReactE
             as='h1'
             className='mobile-header'
           >
-            Market
+            Exhibition
           </Header>
         )}
         { (openPanel === 'filters' || openPanel === 'sort') && (

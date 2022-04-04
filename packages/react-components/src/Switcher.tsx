@@ -91,7 +91,6 @@ export default styled(Switcher)`
     display: inline-block;
     width: 33px;
     height: 18px;
-    margin-right: 29px;
   }
 
   .switch input {
@@ -107,25 +106,25 @@ export default styled(Switcher)`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #322222;
-    border: 1px solid #322222;
+    background-color: transparent;
+    border: 1px solid #203D3D;
     -webkit-transition: 0.4s;
     transition: 0.4s;
 
     &:hover {
-      border: 1px solid #aae6b9;
+      border: 1px solid #203D3D;
     }
   }
 
   .slider:before {
     position: absolute;
     content: "";
-    height: 14px;
-    top: 1px;
-    left: 1px;
-    width: 14px;
+    height: 16px;
+    top: 0px;
+    left: 0px;
+    width: 16px;
 
-    background-color: #322222;
+    background-color: transparent;
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
@@ -143,7 +142,7 @@ export default styled(Switcher)`
   }
 
   .slider.round {
-    border-radius: 15px;
+    border-radius: 16px;
   }
 
   .slider.round:before {

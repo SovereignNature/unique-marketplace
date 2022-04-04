@@ -39,7 +39,7 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
         strict={true}
         to={'/market'}
       >
-        Market
+        Exhibition
       </NavLink>
       <NavLink
         className={`menu-mobile--link ${location.pathname === '/wallet' ? 'active' : ''}`}
@@ -47,7 +47,7 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
         strict={true}
         to={'/wallet'}
       >
-        My tokens
+        My gallery
       </NavLink>
       <NavLink
         className={`menu-mobile--link ${location.pathname === '/trades' ? 'active' : ''}`}
@@ -63,7 +63,7 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
         strict={true}
         to={'/accounts'}
       >
-        Accounts
+        Wallets
       </NavLink>
       <NavLink
         className={`menu-mobile--link ${location.pathname === '/faq' ? 'active' : ''}`}
@@ -71,7 +71,7 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
         strict={true}
         to={'/faq'}
       >
-        FAQ
+        About us
       </NavLink>
     </div>
   );

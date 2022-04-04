@@ -35,27 +35,30 @@ a {
     .item {
       border: none;
       padding: calc(var(--gap) / 2) calc(var(--gap) * 1.5);
-      font: 400 16px/24px var(--font-roboto);
-      color: #AAE6B9;
+      font-size: 16px;
+      font-weight: 200;
+      color: #FFF;
+
       letter-spacing: 2px;
       margin: 0 12px;
       border-radius: 8px !important;
+      text-transform: capitalize;
       transition: 0.4s;
 
       &:hover {
         background-color: rgba(255, 255, 255, 0.2);
-        color: #AAE6B9;
+        color: #FFF;
       }
 
       &.active {
-        background-color: #AAE6B9;
-        color: #231F20;
+        background-color: #203D3D;
+        color: #FFF;
         margin-top: 0;
         font-weight: 500;
         height: 50px;
         border-radius: 8px !important;
         &:hover {
-          background-color: #8bf5a5;
+          background-color: #274949;
         }
       }
 
@@ -165,9 +168,6 @@ a {
   }
 
   .my-tokens {
-    .ui.header {
-      color: #AAE6B9;
-    }
     .hkvxWq {
       max-width: 100%;
       width: 100%;
@@ -185,9 +185,6 @@ a {
     backdrop-filter: blur(10px);
 
 
-    .ui.header {
-      color: #AAE6B9;
-    }
 
     .accessories {
       color: #f4f4f4;

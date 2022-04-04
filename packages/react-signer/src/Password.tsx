@@ -157,7 +157,6 @@ export default React.memo(styled(Unlock)`
       display: inline-block;
       width: 33px;
       height: 18px;
-      margin-right: 29px;
     }
 
     .switch input {
@@ -173,34 +172,34 @@ export default React.memo(styled(Unlock)`
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #322222;
-      border: 1px solid #322222;
+      background-color: transparent;
+      border: 1px solid #203D3D;
       -webkit-transition: 0.4s;
       transition: 0.4s;
 
       &:hover {
-        border: 1px solid #aae6b9;
+        border: 1px solid #203D3D;
       }
     }
 
     .slider:before {
       position: absolute;
       content: "";
-      height: 14px;
-      top: 1px;
-      left: 1px;
-      width: 14px;
+      height: 16px;
+      top: 0px;
+      left: 0px;
+      width: 16px;
 
-      background-color: #322222;
-      -webkit-transition: 0.4s;
-      transition: 0.4s;
+    background-color: transparent;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
     }
 
     input:checked + .slider {
       background-color: #5A7D7C;
       border: 1px solid #5A7D7C;
     }
-
+  
     input:checked + .slider:before {
       left: -1px;
       -webkit-transform: translateX(17px);
@@ -209,7 +208,7 @@ export default React.memo(styled(Unlock)`
     }
 
     .slider.round {
-      border-radius: 15px;
+      border-radius: 16px;
     }
 
     .slider.round:before {
