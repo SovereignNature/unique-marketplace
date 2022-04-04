@@ -168,13 +168,13 @@ function NftDetails ({ account }: NftDetailsProps): React.ReactElement<NftDetail
           >
             <path
               d='M13.5 8H2.5'
-              stroke='var(--card-link-color)'
+              stroke='#fff'
               strokeLinecap='round'
               strokeLinejoin='round'
             />
             <path
               d='M7 3.5L2.5 8L7 12.5'
-              stroke='var(--card-link-color)'
+              stroke='#fff'
               strokeLinecap='round'
               strokeLinejoin='round'
             />

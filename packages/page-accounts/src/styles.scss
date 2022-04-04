@@ -52,8 +52,8 @@
 
 
     .btn-container .btn-select .btn {
-      background-color: #AAE6B9;
-      color: #231F20;
+      background-color: #5A7D7C;
+      color: #fff;
       border: none;
       font-family: var(--font-roboto);
       font-size: 16px;
@@ -61,7 +61,7 @@
       backdrop-filter: blur(10px);
 
       &:hover {
-        background-color: #5A7D7C !important;
+        background-color: #274949 !important;
       }
 
     }
@@ -70,8 +70,8 @@
     .ui--Labelled-content .ui.input.ui--Input input {
       border: none;
       border-radius: 8px;
-      color: #AAE6B9;
-      background: #231F20;
+      color: #fff;
+      background: #5A7D7C;
       padding: 8px 16px;
       width: 100%;
       font-size: 16px;

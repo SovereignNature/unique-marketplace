@@ -99,16 +99,16 @@ hr {
   }
 
   .ui.dropdown.selection.disabled {
-    background: var(--account-selector-background);
+    background: #203D3D;
 
     .ui--KeyPair {
       .name {
         .ui--AccountName {
-          color: var(--account-selector-name-color);
+          color: #fff;
         }
       }
       .address {
-        color: var(--account-selector-address-color);
+        color: #fff;
       }
     }
   }
@@ -199,7 +199,7 @@ h4.ui.header {
   &.search {
     input {
       padding-left: calc(var(--gap) * 2.5);
-      background-image: url("../public/icons/magnifying.svg") !important;
+      cursor: pointer;
       background-size: 24px 24px !important;
       background-repeat: no-repeat !important;
       background-position: 8px !important;
@@ -219,7 +219,7 @@ h4.ui.header {
       .ui.dropdown {
         border-radius: 8px;
         min-width: 0;
-        background: var(--link-color);
+        background: #203D3D;
         padding: 8px 24px !important;
         margin: 0;
         min-height: 0;
@@ -251,11 +251,6 @@ h4.ui.header {
   }
 
   .ui.dropdown {
-    &.active {
-      &:hover {
-        border: 1px solid var(--account-selector-background);
-      }
-    }
 
     .text {
       width: 100%;
@@ -292,13 +287,13 @@ h4.ui.header {
 
   & input.search {
     padding: 0 !important;
+    display: none;
     height: 100%;
   }
 
   .ui--KeyPair {
     flex-direction: column;
-    color: var(--link-color);
-    font: 500 14px/14px var(--font-roboto);
+    color: #FFF;
 
     .icon {
       top: 50% !important;
@@ -312,12 +307,13 @@ h4.ui.header {
 
     & > .address {
       margin-left: 0;
-      font: 500 12px/18px var(--font-roboto);
-      color: #5A7D7C;
+      color: #FFF;
+      opacity: 1;
     }
 
     & > .name {
       margin-left: 0;
+      color: #FFF;
     }
   }
 
@@ -365,10 +361,9 @@ h4.ui.header {
 form {
   .ui--Dropdown {
     .ui.selection.dropdown {
-      border: 1px solid var(--border-color);
       border-radius: calc(var(--bradius) * 2);
-      background: #aae6b9;
-      font: 400 16px/24px var(--font-roboto);
+      background: #203D3D;
+      color: #fff;
       margin: 0;
       height: 40px;
       line-height: 25px;
@@ -378,7 +373,7 @@ form {
       &:focus,
       &:active {
         .menu {
-          border-color: var(--border-color);
+          border: none;
         }
       }
 
@@ -611,7 +606,8 @@ button.ui.button,.ui--Button,.button-link {
     flex-direction: row;
     grid-column-gap: 10px;
     align-items: center;
-    color: var(--card-link-color) !important;
+    text-transform: uppercase;
+    color: #fff !important;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -653,6 +649,7 @@ button.ui.button,.ui--Button,.button-link {
 
 .ui--InputBalance {
   .ui--Labelled-content {
+    border-radius: 24px;
     &:hover {
       cursor: pointer;
     }
@@ -685,12 +682,13 @@ button.ui.button,.ui--Button,.button-link {
 }
 
 .template--AccountSelector {
-  background: var(--account-selector-background);
+  background: #203D3D;
   border-radius: 6px;
-
+  
   .ui.dropdown {
     .menu {
-      background: var(--account-selector-background);
+      background: #203D3D;
+      cursor: pointer;
 
       &::-webkit-scrollbar-track {
         background: var(--dropdown-scrollbar-track-color);
@@ -705,17 +703,17 @@ button.ui.button,.ui--Button,.button-link {
       }
 
       .header {
-        color: var(--account-selector-name-color);
+        color: #fff;
       }
     }
   }
 
   .ui--AccountName {
-    color: var(--account-selector-name-color);
+    color: #fff;
   }
 
   .address {
-    color: var(--account-selector-address-color);
+    color: #fff;
   }
 }
 
