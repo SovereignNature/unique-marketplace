@@ -5,9 +5,9 @@ import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from '
 import Form from 'semantic-ui-react/dist/commonjs/collections/Form';
 import Dropdown, { DropdownProps } from 'semantic-ui-react/dist/commonjs/modules/Dropdown';
 
-import ArrowDown from '@polkadot/app-nft-market/components/arrowDown';
-import ArrowUp from '@polkadot/app-nft-market/components/arrowUp';
-import { Filters } from '@polkadot/app-nft-market/containers/NftMarket';
+import ArrowDown from '@polkadot/app-nft-exhibition/components/arrowDown';
+import ArrowUp from '@polkadot/app-nft-exhibition/components/arrowUp';
+import { Filters } from '@polkadot/app-nft-exhibition/containers/NftMarket';
 import { SearchFilter } from '@polkadot/react-components';
 
 export type SearchFormProps = {

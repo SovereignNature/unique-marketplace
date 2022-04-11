@@ -68,7 +68,7 @@ const NftMarket = ({ account, openPanel, setOpenPanel }: NftMarketProps): ReactE
   const hasMore = offersCount > 0 && loadedOffers?.length < offersCount;
 
   const openDetailedInformationModal = useCallback((collectionId: string, tokenId: string) => {
-    history.push(`/market/token-details?collectionId=${collectionId}&tokenId=${tokenId}`);
+    history.push(`/exhibition/token-details?collectionId=${collectionId}&tokenId=${tokenId}`);
   }, [history]);
 
   const addMintCollectionToList = useCallback(async () => {

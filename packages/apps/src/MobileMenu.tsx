@@ -37,7 +37,7 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
         className={'menu-mobile--link'}
         exact={true}
         strict={true}
-        to={'/market'}
+        to={'/exhibition'}
       >
         Exhibition
       </NavLink>

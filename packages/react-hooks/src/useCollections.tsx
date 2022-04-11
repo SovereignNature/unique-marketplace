@@ -12,7 +12,7 @@ import BN from 'bn.js';
 import equal from 'deep-equal';
 import { useCallback, useRef, useState } from 'react';
 
-import { Filters } from '@polkadot/app-nft-market/containers/NftMarket';
+import { Filters } from '@polkadot/app-nft-exhibition/containers/NftMarket';
 import envConfig from '@polkadot/apps-config/envConfig';
 import { useApi, useCollection, useFetch, useIsMountedRef } from '@polkadot/react-hooks';
 import { subToEth } from '@polkadot/react-hooks/utils';

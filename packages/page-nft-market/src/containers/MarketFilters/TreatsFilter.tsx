@@ -3,7 +3,7 @@
 
 import React, { memo, ReactElement, useCallback, useState } from 'react';
 
-import { Filters } from '@polkadot/app-nft-market/containers/NftMarket';
+import { Filters } from '@polkadot/app-nft-exhibition/containers/NftMarket';
 
 import { SESSION_STORAGE_KEYS } from './constants';
 import {Checkbox} from "@polkadot/react-components";

@@ -2,7 +2,7 @@
   "author": "Konstantin Pozdnikin <kpozdnikin@usetech.com>",
   "bugs": "https://github.com/UniqueNetwork/unique-marketplace/issues",
   "description": "Nft wallet functional",
-  "homepage": "https://github.com/UniqueNetwork/unique-marketplace/tree/master/packages/page-nft-wallet#readme",
+  "homepage": "https://github.com/UniqueNetwork/unique-marketplace/tree/master/packages/page-nft-gallery#readme",
   "license": "Apache-2.0",
   "maintainers": [
     "Konstantin Pozdnikin <kpozdnikin@usetech.com>"

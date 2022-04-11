@@ -8,7 +8,7 @@ import type { NftCollectionInterface } from '@polkadot/react-hooks/useCollection
 import React, { useCallback, useEffect, useState } from 'react';
 import Loader from 'semantic-ui-react/dist/commonjs/elements/Loader';
 
-import { Filters } from '@polkadot/app-nft-market/containers/NftMarket';
+import { Filters } from '@polkadot/app-nft-exhibition/containers/NftMarket';
 import envConfig from '@polkadot/apps-config/envConfig';
 import { Switcher } from '@polkadot/react-components';
 import { fromStringToBnString } from '@polkadot/react-hooks/utils';

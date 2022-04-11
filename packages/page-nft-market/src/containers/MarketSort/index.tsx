@@ -5,9 +5,9 @@ import './styles.scss';
 
 import React, { memo, ReactElement, useCallback, useEffect, useState } from 'react';
 
-import ArrowDown from '@polkadot/app-nft-market/components/arrowDown';
-import ArrowUp from '@polkadot/app-nft-market/components/arrowUp';
-import { Filters } from '@polkadot/app-nft-market/containers/NftMarket';
+import ArrowDown from '@polkadot/app-nft-exhibition/components/arrowDown';
+import ArrowUp from '@polkadot/app-nft-exhibition/components/arrowUp';
+import { Filters } from '@polkadot/app-nft-exhibition/containers/NftMarket';
 
 interface PropTypes {
   filters: Filters;

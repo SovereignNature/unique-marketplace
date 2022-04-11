@@ -6,8 +6,8 @@ import React from 'react';
 
 import { Route } from './types';
 
-// import Component from '@polkadot/app-nft-market';
-const Component = React.lazy(() => import('@polkadot/app-nft-market'));
+// import Component from '@polkadot/app-nft-exhibition';
+const Component = React.lazy(() => import('@polkadot/app-nft-exhibition'));
 
 export default function create (t: TFunction): Route {
   return {
@@ -17,7 +17,7 @@ export default function create (t: TFunction): Route {
     },
     group: 'nft',
     icon: 'users',
-    name: 'market',
+    name: 'exhibition',
     text: t('nav.nftMarket', 'Market', { ns: 'apps-routing' })
   };
 }

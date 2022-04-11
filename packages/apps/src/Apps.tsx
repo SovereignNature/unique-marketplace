@@ -108,10 +108,10 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
                         </a>
                       )}
                       <Menu.Item
-                        active={location.pathname === '/market'}
+                        active={location.pathname === '/exhibition'}
                         as={NavLink}
                         name='Exhibition'
-                        to='/market'
+                        to='/exhibition'
                       />
                       <Menu.Item
                         active={location.pathname === '/gallery'}

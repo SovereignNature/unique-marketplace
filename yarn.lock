@@ -4223,18 +4223,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/app-nft-gallery@workspace:packages/page-nft-wallet":
+"@polkadot/app-nft-exhibition@workspace:packages/page-nft-market":
   version: 0.0.0-use.local
-  resolution: "@polkadot/app-nft-gallery@workspace:packages/page-nft-wallet"
+  resolution: "@polkadot/app-nft-exhibition@workspace:packages/page-nft-market"
   dependencies:
     "@babel/runtime": ^7.13.10
     "@polkadot/react-components": ^0.83.2-28
   languageName: unknown
   linkType: soft
 
-"@polkadot/app-nft-market@workspace:packages/page-nft-market":
+"@polkadot/app-nft-gallery@workspace:packages/page-nft-wallet":
   version: 0.0.0-use.local
-  resolution: "@polkadot/app-nft-market@workspace:packages/page-nft-market"
+  resolution: "@polkadot/app-nft-gallery@workspace:packages/page-nft-wallet"
   dependencies:
     "@babel/runtime": ^7.13.10
     "@polkadot/react-components": ^0.83.2-28
