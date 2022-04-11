@@ -5,8 +5,8 @@ import React, { memo } from 'react';
 import Loader from 'semantic-ui-react/dist/commonjs/elements/Loader';
 import styled from 'styled-components';
 
-import clearIcon from '@polkadot/app-accounts/Accounts/clearIcon.svg';
-import searchIcon from '@polkadot/app-accounts/Accounts/searchIcon.svg';
+import clearIcon from '@polkadot/app-wallets/Accounts/clearIcon.svg';
+import searchIcon from '@polkadot/app-wallets/Accounts/searchIcon.svg';
 import { Input } from '@polkadot/react-components';
 
 interface Props {

@@ -6,9 +6,9 @@ import './style.scss';
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-import CreateModal from '@polkadot/app-accounts/modals/Create';
-import ImportModal from '@polkadot/app-accounts/modals/Import';
-import Qr from '@polkadot/app-accounts/modals/Qr';
+import CreateModal from '@polkadot/app-wallets/modals/Create';
+import ImportModal from '@polkadot/app-wallets/modals/Import';
+import Qr from '@polkadot/app-wallets/modals/Qr';
 import { ActionStatus } from '@polkadot/react-components/Status/types';
 import { useToggle } from '@polkadot/react-hooks';
 

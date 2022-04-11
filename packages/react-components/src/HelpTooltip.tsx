@@ -4,7 +4,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Popup from 'semantic-ui-react/dist/commonjs/modules/Popup';
 
-import question from '@polkadot/app-accounts/Accounts/question.svg';
+import question from '@polkadot/app-wallets/Accounts/question.svg';
 
 interface Props {
   className?: string;

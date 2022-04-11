@@ -4,7 +4,7 @@
 import type { TFunction } from 'i18next';
 import type { Route } from './types';
 
-import Component, { useCounter } from '@polkadot/app-accounts';
+import Component, { useCounter } from '@polkadot/app-wallets';
 
 export default function create (t: TFunction): Route {
   return {
@@ -12,10 +12,10 @@ export default function create (t: TFunction): Route {
     display: {
       needsApi: []
     },
-    group: 'accounts',
+    group: 'wallets',
     icon: 'users',
-    name: 'accounts',
-    text: t('nav.accounts', 'Accounts', { ns: 'apps-routing' }),
+    name: 'wallets',
+    text: t('nav.accounts', 'My Wallets', { ns: 'apps-routing' }),
     useCounter
   };
 }

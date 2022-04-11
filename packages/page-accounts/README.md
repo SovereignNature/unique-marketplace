@@ -1,1 +1,1 @@
-# @polkadot/app-accounts
+# @polkadot/app-wallets
