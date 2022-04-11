@@ -3,7 +3,7 @@
 
 import { TFunction } from 'i18next';
 
-import Component from '@polkadot/app-faq';
+import Component from '@polkadot/app-about';
 
 import { Route } from './types';
 
@@ -15,7 +15,7 @@ export default function create (t: TFunction): Route {
     },
     group: 'nft',
     icon: 'users',
-    name: 'faq',
-    text: t('nav.faq', 'Faq', { ns: 'apps-routing' })
+    name: 'about',
+    text: t('nav.faq', 'About Sadu', { ns: 'apps-routing' })
   };
 }

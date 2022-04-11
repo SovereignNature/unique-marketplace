@@ -1,16 +1,16 @@
 {
   "author": "Konstantin Pozdnikin <kpozdnikin@usetech.com>",
   "bugs": "https://github.com/UniqueNetwork/unique-marketplace/issues",
-  "description": "Faq",
-  "homepage": "https://github.com/UniqueNetwork/unique-marketplace/tree/master/packages/page-faq#readme",
+  "description": "About Sadu",
+  "homepage": "https://github.com/UniqueNetwork/unique-marketplace/tree/master/packages/page-about#readme",
   "license": "Apache-2.0",
   "maintainers": [
     "Konstantin Pozdnikin <kpozdnikin@usetech.com>"
   ],
-  "name": "@polkadot/app-faq",
+  "name": "@polkadot/app-about",
   "private": true,
   "repository": {
-    "directory": "packages/page-faq",
+    "directory": "packages/page-about",
     "type": "git",
     "url": "https://github.com/UniqueNetwork/unique-marketplace.git"
   },

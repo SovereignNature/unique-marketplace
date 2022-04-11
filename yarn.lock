@@ -4200,9 +4200,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/app-faq@workspace:packages/page-faq":
+"@polkadot/app-about@workspace:packages/page-faq":
   version: 0.0.0-use.local
-  resolution: "@polkadot/app-faq@workspace:packages/page-faq"
+  resolution: "@polkadot/app-about@workspace:packages/page-faq"
   dependencies:
     "@babel/runtime": ^7.13.10
     "@polkadot/react-components": ^0.83.2-28
