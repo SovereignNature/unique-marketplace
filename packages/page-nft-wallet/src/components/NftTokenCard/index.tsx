@@ -26,7 +26,7 @@ function NftTokenCard ({ account, collection, token, tokensSelling }: Props): Re
   const history = useHistory();
 
   const openDetailedInformationModal = useCallback((collectionId: string | number, tokenId: string) => {
-    history.push(`/wallet/token-details?collectionId=${collectionId}&tokenId=${tokenId}`);
+    history.push(`/gallery/token-details?collectionId=${collectionId}&tokenId=${tokenId}`);
   }, [history]);
 
   const attrebutesToShow = useMemo(() => {

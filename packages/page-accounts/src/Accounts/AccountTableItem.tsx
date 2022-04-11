@@ -45,7 +45,7 @@ function AccountTableItem ({ account, forgetAccount }: Props): React.ReactElemen
   const viewAllTokens = useCallback(() => {
     document.dispatchEvent(new CustomEvent('account changed', { detail: account.address }));
 
-    history.push('/wallet');
+    history.push('/gallery');
   }, [account.address, history]);
 
   const _onExport = useCallback(() => {

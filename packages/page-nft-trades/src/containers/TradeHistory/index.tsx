@@ -73,7 +73,7 @@ function TradeHistory ({ account }: { account?: string }): React.ReactElement {
               className='overflow tradeList token-id'
             >
               <a
-                href={`#/wallet/token-details?collectionId=${trade.collectionId}&tokenId=${trade.tokenId}`}
+                href={`#/gallery/token-details?collectionId=${trade.collectionId}&tokenId=${trade.tokenId}`}
                 rel='noopener noreferrer'
                 target='_blank'
               >

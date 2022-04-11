@@ -7,10 +7,10 @@
   "maintainers": [
     "Konstantin Pozdnikin <kpozdnikin@usetech.com>"
   ],
-  "name": "@polkadot/app-nft-wallet",
+  "name": "@polkadot/app-nft-gallery",
   "private": true,
   "repository": {
-    "directory": "packages/page-nft-wallet",
+    "directory": "packages/page-nft-gallery",
     "type": "git",
     "url": "https://github.com/UniqueNetwork/unique-marketplace.git"
   },
