@@ -104,10 +104,12 @@ hr {
     .ui--KeyPair {
       .name {
         .ui--AccountName {
+          cursor: pointer;
           color: #fff;
         }
       }
       .address {
+        cursor: pointer;
         color: #fff;
       }
     }
@@ -226,6 +228,7 @@ h4.ui.header {
         height: 40px;
 
         &.selection {
+          background: #203D3D;
           .menu {
             .item {
               border-color: var(--border-color);
@@ -318,7 +321,8 @@ h4.ui.header {
   }
 
   .dropdown.icon {
-    display: flex;
+    display: none;
+    // display: flex;
     align-items: center;
     margin: 0 !important;
     top: 0 !important;
@@ -709,10 +713,12 @@ button.ui.button,.ui--Button,.button-link {
   }
 
   .ui--AccountName {
+    cursor: pointer;
     color: #fff;
   }
 
   .address {
+    cursor: pointer;
     color: #fff;
   }
 }

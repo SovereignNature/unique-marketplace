@@ -36,7 +36,12 @@ export default memo(styled(Footer)`
   }
 
   .app-footer__info {
-    color: var(--foter-text-color);
+    color: #FFF;
+    
+    &__powered {
+      color: #FFF;
+      
+    }
   }
 
   .app-footer__social-links {
