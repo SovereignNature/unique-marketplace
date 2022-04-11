@@ -1,5 +1,15 @@
 .faq-page {
   font-family: var(--font-inter);
+
+  .about__link {
+    color: #fff;
+    font-weight: 600;
+    transition: letter-spacing .2s;
+    
+    &:hover {
+      letter-spacing: 1.5px;
+    }
+  }
   
   .accordion {
     .accordion-item {
