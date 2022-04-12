@@ -71,7 +71,7 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
         strict={true}
         to={'/about'}
       >
-        About us
+        About S&#x0101;du
       </NavLink>
     </div>
   );
