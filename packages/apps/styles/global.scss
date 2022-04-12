@@ -34,6 +34,15 @@
   font-style: normal;
 }
 
+a:hover {
+  color: var(--link-color) !important;
+  cursor: pointer;
+}
+
+.ui.active.visible.search.selection.dropdown {
+  border-color: #96c8da !important;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -97,6 +106,7 @@ hr {
   .header {
     color: var(--modal-text-color) !important;
   }
+ 
 
   .ui.dropdown.selection.disabled {
     background: #203D3D;
@@ -280,11 +290,10 @@ h4.ui.header {
   .ui.selection.dropdown {
     border: 1px solid transparent;
     border-radius: calc(var(--bradius) * 2);
-    padding: calc(var(--gap) / 3) calc(var(--gap) * 2);
-    height: 48px;
+    padding: 8px;
 
     & .menu > .item {
-      padding: calc(var(--gap) / 3) calc(var(--gap) * 2) !important;
+      padding: 8px !important;
     }
   }
 

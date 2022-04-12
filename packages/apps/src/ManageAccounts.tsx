@@ -50,10 +50,7 @@ const ManageAccounts = (props: Props): React.ReactElement<Props> => {
             className='account-item'
             key={address}
           >
-            <IdentityIcon
-              className='icon'
-              value={address}
-            />
+            <div className="icon"></div>
             <div
               className='account-item--name'
               onClick={onSelectAccount.bind(null, address)}

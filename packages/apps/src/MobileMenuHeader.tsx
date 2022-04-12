@@ -7,7 +7,7 @@ import React, { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import Menu from 'semantic-ui-react/dist/commonjs/collections/Menu';
 
-import saduLogo from '../src/images/sadu-logo.png';
+import saduLogo from '../src/images/sadu-logo.svg';
 
 interface Props {
   isMobileMenu: OpenPanelType;
@@ -31,17 +31,17 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
             width='32'
             xmlns='http://www.w3.org/2000/svg'>
             <path d='M5 16H27'
-              stroke='#AAE6B9'
+              stroke='#5a7d7c'
               strokeLinecap='round'
               strokeLinejoin='round'
               strokeWidth='2'/>
             <path d='M5 8H27'
-              stroke='#AAE6B9'
+              stroke='#5a7d7c'
               strokeLinecap='round'
               strokeLinejoin='round'
               strokeWidth='2'/>
             <path d='M5 24H27'
-              stroke='#AAE6B9'
+              stroke='#5a7d7c'
               strokeLinecap='round'
               strokeLinejoin='round'
               strokeWidth='2'/>

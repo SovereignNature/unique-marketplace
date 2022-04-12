@@ -31,13 +31,7 @@ const MobileAccountSelector = (props: MobileAccountSelectorProps): React.ReactEl
       className='mobile-account-selector'
       onClick={onClick}
     >
-      { address && (
-        <IdentityIcon
-          canNotCopy
-          className='icon'
-          value={address}
-        />
-      )}
+      <p>Accounts</p>
       <img
         alt='menu-arrow'
         className={openPanel === 'accounts' ? 'rotate-icon' : ''}

@@ -4,7 +4,7 @@
 import React, { memo, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-import saduLogo from '../src/images/sadu-logo.png';
+import saduLogo from '../src/images/sadu-logo.svg';
 import { OpenPanelType } from '@polkadot/apps-routing/types';
 
 interface Props {
@@ -30,7 +30,7 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
     <div className={`menu-mobile ${account ? '' : 'no-accounts'}`}>
       <div className='menu-mobile--logo'>
       <img
-          alt={`Saud Logo`}
+          alt={`Sadu Logo`}
           src={String(saduLogo)} />
       </div>
       <NavLink
@@ -71,7 +71,7 @@ const MobileMenuHeader = (props: Props): React.ReactElement<Props> => {
         strict={true}
         to={'/about'}
       >
-        About S&#x0101;du
+        About Sādu
       </NavLink>
     </div>
   );

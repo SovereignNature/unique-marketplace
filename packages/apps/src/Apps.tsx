@@ -32,7 +32,7 @@ import MobileMenu from './MobileMenu';
 import MobileMenuHeader from './MobileMenuHeader';
 import ScrollToTop from './ScrollToTop';
 
-import sadulogo from '../src/images/sadu-logo.png';
+import sadulogo from '../src/images/sadu-logo.svg';
 
 export const PORTAL_ID = 'portals';
 
@@ -134,9 +134,9 @@ function Apps ({ className = '' }: Props): React.ReactElement<Props> {
                       <Menu.Item
                         active={location.pathname === '/about'}
                         as={NavLink}
-                        name='About Sādu'
-                        to='/about'
-                      />
+                        to='/about'>
+                      About Sādu
+                      </Menu.Item>
                     </Menu>
                     <div className='app-user'>
                       { (!isApiReady || !isApiConnected) && (

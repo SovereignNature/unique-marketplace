@@ -32,10 +32,6 @@ function KeyPair ({ address, className = '' }: Props): React.ReactElement<Props>
       className={`ui--KeyPair ${className}`}
       onClick={onIconClick}
     >
-      <IdentityIcon
-        className='icon'
-        value={address}
-      />
       <div className='name'>
         <AccountName value={address} />
       </div>
