@@ -824,12 +824,12 @@ a {
 }
 
 .ui.popup.help {
-  background-color: var(--text-color) !important;
-  color: var(--header-background);
+  background-color: #000 !important;
+  color: #fff;
   max-width: 355px;
 
   &:before {
-    background-color: var(--text-color) !important;
+    background-color: #000 !important;
   }
 }
 
@@ -924,11 +924,11 @@ a {
 }
 
 .ui.popup.help {
-  background-color: var(--text-color) !important;
-  color: var(--header-background);
+  background-color: #000 !important;
+  color: #fff;
   max-width: 355px;
 
   &:before {
-    background-color: var(--text-color) !important;
+    background-color: #000 !important;
   }
 }
